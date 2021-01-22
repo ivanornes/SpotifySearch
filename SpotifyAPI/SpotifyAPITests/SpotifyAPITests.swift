@@ -22,21 +22,47 @@ class SpotifyHTTPClient: HTTPClient {
     }
 }
 
+class SpotifyDataMapper {
+    static func map(_ data: Data) throws -> [SearchItem] {
+        return []
+    }
+}
+
 class SpotifyAPI {
     typealias SearchResult = Result<[SearchItem], Swift.Error>
     
     enum Error: Swift.Error {
         case emptyString
+        case invalidData
+        case connectivityError
     }
     
+    let url: URL
     let client: HTTPClient
     
-    init(client: HTTPClient) {
+    init(url: URL, client: HTTPClient) {
+        self.url = url
         self.client = client
     }
     
     func search(_ text: String, onCompletion: @escaping (SearchResult) -> Void) throws {
         guard !text.isEmpty else { throw Error.emptyString }
+        client.get(from: url) { result in
+            switch result {
+            case .success((let data, let response)):
+                if response.statusCode == 200 {
+                    do {
+                        let searchItems = try SpotifyDataMapper.map(data)
+                        onCompletion(.success(searchItems))
+                    } catch {
+                        onCompletion(.failure(Error.invalidData))
+                    }
+                } else {
+                    onCompletion(.failure(Error.invalidData))
+                }
+            case .failure(_): onCompletion(.failure(Error.connectivityError))
+            }
+        }
         onCompletion(.success([]))
     }
 }
@@ -73,8 +99,13 @@ class SearchSpotifyAPITests: XCTestCase {
     
     func makeSUT(file: StaticString = #file, line: UInt = #line) -> SpotifyAPI {
         let httpClient = SpotifyHTTPClient()
-        let sut = SpotifyAPI(client: httpClient)
+        let url = makeURL()
+        let sut = SpotifyAPI(url: url, client: httpClient)
         trackForMemoryLeaks(sut, file: file, line: line)
         return sut
+    }
+    
+    func makeURL() -> URL {
+        URL(string: "https://api.spotify.com/v1/search?")!
     }
 }
