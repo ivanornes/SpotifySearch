@@ -10,6 +10,7 @@
 		9F3448C425BB73E500A4A298 /* SpotifyAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F3448BA25BB73E400A4A298 /* SpotifyAPI.framework */; };
 		9F3448C925BB73E500A4A298 /* SpotifyAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3448C825BB73E500A4A298 /* SpotifyAPITests.swift */; };
 		9F3448CB25BB73E500A4A298 /* SpotifyAPI.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F3448BD25BB73E400A4A298 /* SpotifyAPI.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9F3448D825BB775500A4A298 /* XCTestCase+MemoryLeakTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3448D725BB775500A4A298 /* XCTestCase+MemoryLeakTracking.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +30,7 @@
 		9F3448C325BB73E500A4A298 /* SpotifyAPITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpotifyAPITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F3448C825BB73E500A4A298 /* SpotifyAPITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyAPITests.swift; sourceTree = "<group>"; };
 		9F3448CA25BB73E500A4A298 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9F3448D725BB775500A4A298 /* XCTestCase+MemoryLeakTracking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+MemoryLeakTracking.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,10 +82,19 @@
 		9F3448C725BB73E500A4A298 /* SpotifyAPITests */ = {
 			isa = PBXGroup;
 			children = (
+				9F3448D625BB774D00A4A298 /* Helpers */,
 				9F3448C825BB73E500A4A298 /* SpotifyAPITests.swift */,
 				9F3448CA25BB73E500A4A298 /* Info.plist */,
 			);
 			path = SpotifyAPITests;
+			sourceTree = "<group>";
+		};
+		9F3448D625BB774D00A4A298 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				9F3448D725BB775500A4A298 /* XCTestCase+MemoryLeakTracking.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -202,6 +213,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9F3448C925BB73E500A4A298 /* SpotifyAPITests.swift in Sources */,
+				9F3448D825BB775500A4A298 /* XCTestCase+MemoryLeakTracking.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

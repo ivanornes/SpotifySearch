@@ -34,8 +34,9 @@ class SearchSpotifyAPITests: XCTestCase {
     
     // MARK: Helper
     
-    func makeSUT() -> SpotifyAPI {
+    func makeSUT(file: StaticString = #file, line: UInt = #line) -> SpotifyAPI {
         let sut = SpotifyAPI()
+        trackForMemoryLeaks(sut, file: file, line: line)
         return sut
     }
 }
