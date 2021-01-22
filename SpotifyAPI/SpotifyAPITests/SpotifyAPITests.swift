@@ -11,11 +11,28 @@ import XCTest
 struct SearchItem {
 }
 
+protocol HTTPClient {
+    typealias Result = Swift.Result<(Data, HTTPURLResponse), Swift.Error>
+    
+    func get(from url: URL, completion: @escaping (Result) -> Void)
+}
+
+class SpotifyHTTPClient: HTTPClient {
+    func get(from url: URL, completion: @escaping (HTTPClient.Result) -> Void) {
+    }
+}
+
 class SpotifyAPI {
     typealias SearchResult = Result<[SearchItem], Swift.Error>
     
     enum Error: Swift.Error {
         case emptyString
+    }
+    
+    let client: HTTPClient
+    
+    init(client: HTTPClient) {
+        self.client = client
     }
     
     func search(_ text: String, onCompletion: @escaping (SearchResult) -> Void) throws {
@@ -55,7 +72,8 @@ class SearchSpotifyAPITests: XCTestCase {
     // MARK: Helper
     
     func makeSUT(file: StaticString = #file, line: UInt = #line) -> SpotifyAPI {
-        let sut = SpotifyAPI()
+        let httpClient = SpotifyHTTPClient()
+        let sut = SpotifyAPI(client: httpClient)
         trackForMemoryLeaks(sut, file: file, line: line)
         return sut
     }
