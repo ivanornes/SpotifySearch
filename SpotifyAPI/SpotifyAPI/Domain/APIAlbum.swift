@@ -15,7 +15,8 @@ public struct APIAlbum: Codable {
     public let href: String
     public let id: String
     public let images: [APIImage]
-    public let name, releaseDate: String
+    public let name: String
+    public let releaseDate: String
     public let releaseDatePrecision: String
     public let totalTracks: Int
     public let type: String

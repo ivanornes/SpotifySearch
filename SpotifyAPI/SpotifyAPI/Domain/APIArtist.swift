@@ -16,8 +16,9 @@ public struct APIArtist: Codable {
     public let images: [APIImage]?
     public let name: String
     public let popularity: Int?
-    public let type, uri: String
-
+    public let type: String
+    public let uri: String
+    
     enum CodingKeys: String, CodingKey {
         case externalUrls = "external_urls"
         case followers, genres, href, id, images, name, popularity, type, uri

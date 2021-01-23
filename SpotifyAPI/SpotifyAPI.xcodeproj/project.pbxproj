@@ -27,6 +27,10 @@
 		9F344A0125BCCC2800A4A298 /* APIAlbum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F344A0025BCCC2800A4A298 /* APIAlbum.swift */; };
 		9F344A0425BCCC4700A4A298 /* APIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F344A0325BCCC4700A4A298 /* APIImage.swift */; };
 		9F344A0A25BCCCB600A4A298 /* APIFollowers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F344A0925BCCCB600A4A298 /* APIFollowers.swift */; };
+		9F344A1025BCD25A00A4A298 /* APITrackSearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F344A0F25BCD25A00A4A298 /* APITrackSearchResponse.swift */; };
+		9F344A1325BCD39B00A4A298 /* APIExternalIDS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F344A1225BCD39B00A4A298 /* APIExternalIDS.swift */; };
+		9F344A1625BCD3B400A4A298 /* APITrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F344A1525BCD3B400A4A298 /* APITrack.swift */; };
+		9F344A1925BCD3C800A4A298 /* APITracks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F344A1825BCD3C800A4A298 /* APITracks.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +80,10 @@
 		9F344A0025BCCC2800A4A298 /* APIAlbum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIAlbum.swift; sourceTree = "<group>"; };
 		9F344A0325BCCC4700A4A298 /* APIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIImage.swift; sourceTree = "<group>"; };
 		9F344A0925BCCCB600A4A298 /* APIFollowers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIFollowers.swift; sourceTree = "<group>"; };
+		9F344A0F25BCD25A00A4A298 /* APITrackSearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APITrackSearchResponse.swift; sourceTree = "<group>"; };
+		9F344A1225BCD39B00A4A298 /* APIExternalIDS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIExternalIDS.swift; sourceTree = "<group>"; };
+		9F344A1525BCD3B400A4A298 /* APITrack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APITrack.swift; sourceTree = "<group>"; };
+		9F344A1825BCD3C800A4A298 /* APITracks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APITracks.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +179,7 @@
 				9F3448F825BBFBA400A4A298 /* APISearchItem.swift */,
 				9F3449E425BCC9D500A4A298 /* APIAlbumsSearchResponse.swift */,
 				9F3449F025BCCA7E00A4A298 /* APIArtistSearchResponse.swift */,
+				9F344A0F25BCD25A00A4A298 /* APITrackSearchResponse.swift */,
 				9F3449E725BCC9EA00A4A298 /* APIAlbums.swift */,
 				9F3449F325BCCA9200A4A298 /* APIArtists.swift */,
 				9F3449FA25BCCBCD00A4A298 /* APIArtist.swift */,
@@ -178,6 +187,9 @@
 				9F344A0025BCCC2800A4A298 /* APIAlbum.swift */,
 				9F344A0325BCCC4700A4A298 /* APIImage.swift */,
 				9F344A0925BCCCB600A4A298 /* APIFollowers.swift */,
+				9F344A1225BCD39B00A4A298 /* APIExternalIDS.swift */,
+				9F344A1525BCD3B400A4A298 /* APITrack.swift */,
+				9F344A1825BCD3C800A4A298 /* APITracks.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -301,18 +313,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				9F3448E525BBFAEF00A4A298 /* SpotifyAPI.swift in Sources */,
+				9F344A1025BCD25A00A4A298 /* APITrackSearchResponse.swift in Sources */,
 				9F3449F125BCCA7E00A4A298 /* APIArtistSearchResponse.swift in Sources */,
 				9F3449F425BCCA9200A4A298 /* APIArtists.swift in Sources */,
 				9F3448E925BBFB2600A4A298 /* SpotifyDataMapper.swift in Sources */,
 				9F344A0A25BCCCB600A4A298 /* APIFollowers.swift in Sources */,
 				9F344A0125BCCC2800A4A298 /* APIAlbum.swift in Sources */,
 				9F3449E525BCC9D500A4A298 /* APIAlbumsSearchResponse.swift in Sources */,
+				9F344A1925BCD3C800A4A298 /* APITracks.swift in Sources */,
 				9F344A0425BCCC4700A4A298 /* APIImage.swift in Sources */,
 				9F3448F425BBFB8200A4A298 /* HTTPClient.swift in Sources */,
 				9F3449E825BCC9EA00A4A298 /* APIAlbums.swift in Sources */,
 				9F3448EE25BBFB6B00A4A298 /* URLSessionHTTPClient.swift in Sources */,
+				9F344A1325BCD39B00A4A298 /* APIExternalIDS.swift in Sources */,
 				9F3448F925BBFBA400A4A298 /* APISearchItem.swift in Sources */,
 				9F3449FB25BCCBCD00A4A298 /* APIArtist.swift in Sources */,
+				9F344A1625BCD3B400A4A298 /* APITrack.swift in Sources */,
 				9F3449FE25BCCC0E00A4A298 /* APIExternalUrls.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

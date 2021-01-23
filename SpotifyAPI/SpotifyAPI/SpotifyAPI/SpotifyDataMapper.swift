@@ -20,4 +20,10 @@ internal class SpotifyDataMapper {
         let response = try decoder.decode(APIAlbumsSearchResponse.self, from: data)
         return response.albums.items
     }
+    
+    internal static func mapTracks(_ data: Data) throws -> [APISearchItem] {
+        let decoder = JSONDecoder()
+        let response = try decoder.decode(APITrackSearchResponse.self, from: data)
+        return response.tracks.items
+    }
 }

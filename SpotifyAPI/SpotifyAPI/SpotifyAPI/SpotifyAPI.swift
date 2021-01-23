@@ -67,7 +67,7 @@ public class SpotifyAPI {
         switch searchType {
         case .album: return try SpotifyDataMapper.mapAlbums(data)
         case .artist: return try SpotifyDataMapper.mapArtists(data)
-        case .track: return try SpotifyDataMapper.mapArtists(data)
+        case .track: return try SpotifyDataMapper.mapTracks(data)
         }
     }
     

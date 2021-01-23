@@ -125,6 +125,24 @@ class SearchSpotifyAPITests: XCTestCase {
         wait(for: [exp], timeout: 1.0)
     }
     
+    func test_searchRequest_trackSearchReturnsAPITrackModels() {
+        let sut = makeSUT()
+        let exp = expectation(description: "Wait for search result")
+        let criteria = SearchCriteria(text: "ISIS", type: .track)
+        try? sut.search(criteria) { result in
+            switch result {
+            case let .success(searchResults):
+                if !(searchResults is [APITrack]) {
+                    XCTFail("Expected an array of album")
+                }
+            case let .failure(error): XCTFail("Expected to fetch some data, got \(error.localizedDescription)")
+            }
+            exp.fulfill()
+        }
+        
+        wait(for: [exp], timeout: 1.0)
+    }
+    
     // MARK: Helper
     
     func makeSUT(file: StaticString = #file, line: UInt = #line) -> SpotifyAPI {
