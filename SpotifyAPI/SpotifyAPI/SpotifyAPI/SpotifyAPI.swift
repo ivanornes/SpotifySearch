@@ -7,6 +7,15 @@
 
 import Foundation
 
+public enum SearchType: String {
+    case album, artist, track
+}
+
+public struct SearchCriteria {
+    public let text: String
+    public let type: SearchType
+}
+
 public class SpotifyAPI {
     public typealias SearchResult = Result<[SearchItem], Swift.Error>
     
@@ -24,11 +33,11 @@ public class SpotifyAPI {
         self.client = client
     }
     
-    public func search(_ text: String, onCompletion: @escaping (SearchResult) -> Void) throws {
-        guard !text.isEmpty else { throw Error.emptyString }
-        client.get(from: url) { result in
+    public func search(_ criteria: SearchCriteria, onCompletion: @escaping (SearchResult) -> Void) throws {
+        guard !criteria.text.isEmpty else { throw Error.emptyString }
+        client.get(from: getURLForCriteria(criteria)) { result in
             switch result {
-            case .success((let data, let response)):
+            case let .success((data, response)):
                 if response.statusCode == 200 {
                     do {
                         let searchItems = try SpotifyDataMapper.map(data)
@@ -42,6 +51,17 @@ public class SpotifyAPI {
             case .failure(_): onCompletion(.failure(Error.connectivityError))
             }
         }
-        onCompletion(.success([]))
+    }
+    
+    public func getURLForCriteria(_ criteria: SearchCriteria) -> URL {
+        var components = URLComponents()
+        components.scheme = url.scheme
+        components.host = url.host
+        components.path = url.path + "/v1/search"
+        components.queryItems = [
+            URLQueryItem(name: "q", value: criteria.text),
+            URLQueryItem(name: "type", value: criteria.type.rawValue)
+        ].compactMap { $0 }
+        return components.url!
     }
 }

@@ -10,11 +10,38 @@ import XCTest
 
 class SearchSpotifyAPITests: XCTestCase {
 
+    func test_getURLForCriteria_correctlyComposesArtistURL() {
+        let sut = makeSUT()
+        
+        let criteria = SearchCriteria(text: "noisia", type: .artist)
+        let url = sut.getURLForCriteria(criteria)
+        
+        XCTAssertEqual(url, URL(string: "https://api.spotify.com/v1/search?q=noisia&type=artist"))
+    }
+
+    func test_getURLForCriteria_correctlyComposesAlbumURL() {
+        let sut = makeSUT()
+        
+        let criteria = SearchCriteria(text: "korn", type: .album)
+        let url = sut.getURLForCriteria(criteria)
+        
+        XCTAssertEqual(url, URL(string: "https://api.spotify.com/v1/search?q=korn&type=album"))
+    }
+    
+    func test_getURLForCriteria_correctlyComposesTrackURL() {
+        let sut = makeSUT()
+        
+        let criteria = SearchCriteria(text: "Asking Alexandria", type: .track)
+        let url = sut.getURLForCriteria(criteria)
+        
+        XCTAssertEqual(url, URL(string: "https://api.spotify.com/v1/search?q=Asking%20Alexandria&type=track"))
+    }
+    
     func test_searchRequest_returnsEmptyList() {
         let sut = makeSUT()
         let exp = expectation(description: "Wait for search result")
-        
-        try? sut.search("random-music-string-search") { result in
+        let criteria = SearchCriteria(text: "random-music-string-search", type: .artist)
+        try? sut.search(criteria) { result in
             switch result {
             case let .success(searchResults): XCTAssert(searchResults.isEmpty)
             case let .failure(error): XCTFail("Expected to fetch some data, got \(error.localizedDescription)")
@@ -27,8 +54,9 @@ class SearchSpotifyAPITests: XCTestCase {
 
     func test_searchRequest_returnsErrorSearchingEmptyString() {
         let sut = makeSUT()
+        let criteria = SearchCriteria(text: "", type: .artist)
         do {
-            try sut.search("") { _ in
+            try sut.search(criteria) { _ in
                 XCTFail("Expected to throw exception")
             }
             XCTFail("Expected to throw exception")
@@ -50,7 +78,7 @@ class SearchSpotifyAPITests: XCTestCase {
     }
     
     func makeURL() -> URL {
-        URL(string: "https://api.spotify.com/v1/search?")!
+        URL(string: "https://api.spotify.com")!
     }
     
     func makeURLSession() -> URLSession {
