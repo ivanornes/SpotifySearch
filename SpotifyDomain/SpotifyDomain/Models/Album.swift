@@ -21,4 +21,32 @@ public struct Album {
     public let totalTracks: Int
     public let type: String
     public let uri: String
+    
+    public init(albumType: String,
+                artists: [Artist],
+                availableMarkets: [String],
+                externalUrls: ExternalUrls,
+                href: String,
+                id: String,
+                images: [Image],
+                name: String,
+                releaseDate: String,
+                releaseDatePrecision: String,
+                totalTracks: Int,
+                type: String,
+                uri: String) {
+        self.albumType = albumType
+        self.artists = artists
+        self.availableMarkets = availableMarkets
+        self.externalUrls = externalUrls
+        self.href = href
+        self.id = id
+        self.images = images
+        self.name = name
+        self.releaseDate = releaseDate
+        self.releaseDatePrecision = releaseDatePrecision
+        self.totalTracks = totalTracks
+        self.type = type
+        self.uri = uri
+    }
 }

@@ -10,4 +10,9 @@ import Foundation
 public struct Followers {
     public let href: String?
     public let total: Int
+    
+    public init(href: String?, total: Int) {
+        self.href = href
+        self.total = total
+    }
 }

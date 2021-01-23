@@ -9,4 +9,8 @@ import Foundation
 
 public struct ExternalUrls {
     public let spotify: String
+    
+    public init(spotify: String) {
+        self.spotify = spotify
+    }
 }

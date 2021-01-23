@@ -9,4 +9,8 @@ import Foundation
 
 public struct ExternalIDS {
     public let isrc: String
+    
+    public init(isrc: String) {
+        self.isrc = isrc
+    }
 }
