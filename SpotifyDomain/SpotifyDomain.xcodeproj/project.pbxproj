@@ -11,6 +11,10 @@
 		9F3449C225BC54B100A4A298 /* SpotifyDomainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3449C125BC54B100A4A298 /* SpotifyDomainTests.swift */; };
 		9F3449C425BC54B100A4A298 /* SpotifyDomain.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F3449B625BC54B000A4A298 /* SpotifyDomain.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9F3449D325BC54FC00A4A298 /* Artist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3449D225BC54FC00A4A298 /* Artist.swift */; };
+		9F3449DD25BCC82D00A4A298 /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3449DC25BCC82D00A4A298 /* Album.swift */; };
+		9F3449E125BCC87600A4A298 /* ExternalUrls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3449E025BCC87600A4A298 /* ExternalUrls.swift */; };
+		9F3449EB25BCCA5400A4A298 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3449EA25BCCA5400A4A298 /* Image.swift */; };
+		9F3449F725BCCAB500A4A298 /* Followers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3449F625BCCAB500A4A298 /* Followers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,6 +35,10 @@
 		9F3449C125BC54B100A4A298 /* SpotifyDomainTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyDomainTests.swift; sourceTree = "<group>"; };
 		9F3449C325BC54B100A4A298 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9F3449D225BC54FC00A4A298 /* Artist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artist.swift; sourceTree = "<group>"; };
+		9F3449DC25BCC82D00A4A298 /* Album.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
+		9F3449E025BCC87600A4A298 /* ExternalUrls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExternalUrls.swift; sourceTree = "<group>"; };
+		9F3449EA25BCCA5400A4A298 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+		9F3449F625BCCAB500A4A298 /* Followers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Followers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +101,10 @@
 			isa = PBXGroup;
 			children = (
 				9F3449D225BC54FC00A4A298 /* Artist.swift */,
+				9F3449DC25BCC82D00A4A298 /* Album.swift */,
+				9F3449E025BCC87600A4A298 /* ExternalUrls.swift */,
+				9F3449EA25BCCA5400A4A298 /* Image.swift */,
+				9F3449F625BCCAB500A4A298 /* Followers.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -207,6 +219,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				9F3449D325BC54FC00A4A298 /* Artist.swift in Sources */,
+				9F3449DD25BCC82D00A4A298 /* Album.swift in Sources */,
+				9F3449F725BCCAB500A4A298 /* Followers.swift in Sources */,
+				9F3449EB25BCCA5400A4A298 /* Image.swift in Sources */,
+				9F3449E125BCC87600A4A298 /* ExternalUrls.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
