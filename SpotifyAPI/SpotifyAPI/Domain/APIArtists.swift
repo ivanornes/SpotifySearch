@@ -6,11 +6,10 @@
 //
 
 import Foundation
-import SpotifyDomain
 
-public struct Artists: Codable {
+public struct APIArtists: Codable {
     public let href: String
-    public let items: [Artist]
+    public let items: [APIArtist]
     public let limit: Int
     public let next: String?
     public let offset: Int

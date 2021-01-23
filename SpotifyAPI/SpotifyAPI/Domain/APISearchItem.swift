@@ -7,4 +7,4 @@
 
 import Foundation
 
-public typealias SearchItem = Any
+public typealias APISearchItem = Any

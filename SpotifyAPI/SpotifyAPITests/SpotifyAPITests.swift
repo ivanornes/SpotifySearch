@@ -89,14 +89,14 @@ class SearchSpotifyAPITests: XCTestCase {
         wait(for: [exp], timeout: 1.0)
     }
 
-    func test_searchRequest_artistSearchReturnsArtistModels() {
+    func test_searchRequest_artistSearchReturnsAPIArtistModels() {
         let sut = makeSUT()
         let exp = expectation(description: "Wait for search result")
         let criteria = SearchCriteria(text: "Danger", type: .artist)
         try? sut.search(criteria) { result in
             switch result {
             case let .success(searchResults):
-                if (searchResults is [Artists]) {
+                if (searchResults is [APIArtists]) {
                     XCTFail("Expected an array of artists")
                 }
             case let .failure(error): XCTFail("Expected to fetch some data, got \(error.localizedDescription)")

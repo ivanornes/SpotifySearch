@@ -26,7 +26,7 @@ public struct SearchCriteria {
 }
 
 public class SpotifyAPI {
-    public typealias SearchResult = Result<[SearchItem], Swift.Error>
+    public typealias SearchResult = Result<[APISearchItem], Swift.Error>
     
     public enum Error: Swift.Error {
         case emptyString
