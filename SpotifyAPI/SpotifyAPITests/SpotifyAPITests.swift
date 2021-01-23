@@ -6,6 +6,7 @@
 //
 
 import XCTest
+import SpotifyDomain
 @testable import SpotifyAPI
 
 class SearchSpotifyAPITests: XCTestCase {
@@ -78,6 +79,24 @@ class SearchSpotifyAPITests: XCTestCase {
         
         wait(for: [exp], timeout: 1.0)
     }
+
+    func test_searchRequest_artistSearchReturnsArtistModels() {
+        let sut = makeSUT()
+        let exp = expectation(description: "Wait for search result")
+        let criteria = SearchCriteria(text: "Danger", type: .artist)
+        try? sut.search(criteria) { result in
+            switch result {
+            case let .success(searchResults):
+                if (searchResults is [Artists]) {
+                    XCTFail("Expected an array of artists")
+                }
+            case let .failure(error): XCTFail("Expected to fetch some data, got \(error.localizedDescription)")
+            }
+            exp.fulfill()
+        }
+        
+        wait(for: [exp], timeout: 1.0)
+    }
     
     // MARK: Helper
     
@@ -100,7 +119,7 @@ class SearchSpotifyAPITests: XCTestCase {
         let sessionConfiguration = URLSessionConfiguration.ephemeral
         sessionConfiguration.httpAdditionalHeaders = ["Accept": "application/json",
                                                       "Content-Type": "application/json",
-                                                      "Authorization": "Bearer BQCT7oCDv8Ud23CAcCmj8-UPyHKw4P4TQDJXDK4mnXHz096hUzjyR8WoN1S1SkIffZStQkTpxsndmPNr6MGpRFm7ZEzcnbDuesat9pr0aNLdb1aU2vvCG6V7lJLWm_gQH02L42kDKADSs0I"]
+                                                      "Authorization": "Bearer BQAl9tphrX9t53wM57JCqc2cuLUCO-DGJzFN41Wv74MmvUOUFicGgS7B64itd3WAEj94-pLK0zTgK2HNKWLSzY0InRy9F_NVDi5cIrAtG1-e3Tb4Avb8NX4CLoXCpDnaMFPKcuH21lCTfXA"]
         return URLSession(configuration: sessionConfiguration)
     }
 }
