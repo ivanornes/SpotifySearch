@@ -15,9 +15,9 @@ public struct Artists: Codable {
     public let href: String
     public let items: [ArtistsItem]
     public let limit: Int
-//    public let next: JSONNull?
+    public let next: String?
     public let offset: Int
-//    public let previous: JSONNull?
+    public let previous: String?
     public let total: Int
 }
 
@@ -43,7 +43,7 @@ public struct ExternalUrls: Codable {
 }
 
 public struct Followers: Codable {
-//    public let href: JSONNull?
+    public let href: String?
     public let total: Int
 }
 
