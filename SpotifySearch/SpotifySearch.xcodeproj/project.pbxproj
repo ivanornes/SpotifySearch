@@ -15,6 +15,10 @@
 		9F34492B25BC02AC00A4A298 /* SpotifySearchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F34492A25BC02AC00A4A298 /* SpotifySearchUITests.swift */; };
 		9F34494325BC046600A4A298 /* SpotifyAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F34494225BC046600A4A298 /* SpotifyAPI.framework */; };
 		9F34494425BC046600A4A298 /* SpotifyAPI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9F34494225BC046600A4A298 /* SpotifyAPI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9F34496125BC3BE100A4A298 /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F34496025BC3BE100A4A298 /* InitialViewController.swift */; };
+		9F34496725BC3C9300A4A298 /* Initial.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F34496625BC3C9300A4A298 /* Initial.storyboard */; };
+		9F34496E25BC3CD800A4A298 /* InitialWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F34496D25BC3CD800A4A298 /* InitialWireframe.swift */; };
+		9F34497325BC3D4400A4A298 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F34497225BC3D4400A4A298 /* UIViewController+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +66,10 @@
 		9F34492A25BC02AC00A4A298 /* SpotifySearchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifySearchUITests.swift; sourceTree = "<group>"; };
 		9F34492C25BC02AC00A4A298 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9F34494225BC046600A4A298 /* SpotifyAPI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SpotifyAPI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9F34496025BC3BE100A4A298 /* InitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
+		9F34496625BC3C9300A4A298 /* Initial.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Initial.storyboard; sourceTree = "<group>"; };
+		9F34496D25BC3CD800A4A298 /* InitialWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialWireframe.swift; sourceTree = "<group>"; };
+		9F34497225BC3D4400A4A298 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +124,8 @@
 			children = (
 				9F34490825BC02A800A4A298 /* AppDelegate.swift */,
 				9F34490A25BC02A800A4A298 /* SceneDelegate.swift */,
+				9F34497125BC3D3C00A4A298 /* Shared UI */,
+				9F34494D25BC068800A4A298 /* Modules */,
 				9F34494A25BC055000A4A298 /* Supporting files */,
 			);
 			path = SpotifySearch;
@@ -155,6 +165,48 @@
 				9F34491325BC02AB00A4A298 /* LaunchScreen.storyboard */,
 			);
 			path = "Supporting files";
+			sourceTree = "<group>";
+		};
+		9F34494D25BC068800A4A298 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				9F34495A25BC3B8500A4A298 /* Initial */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		9F34495A25BC3B8500A4A298 /* Initial */ = {
+			isa = PBXGroup;
+			children = (
+				9F34496A25BC3CAA00A4A298 /* Wireframe */,
+				9F34495B25BC3BBE00A4A298 /* View */,
+			);
+			path = Initial;
+			sourceTree = "<group>";
+		};
+		9F34495B25BC3BBE00A4A298 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9F34496025BC3BE100A4A298 /* InitialViewController.swift */,
+				9F34496625BC3C9300A4A298 /* Initial.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9F34496A25BC3CAA00A4A298 /* Wireframe */ = {
+			isa = PBXGroup;
+			children = (
+				9F34496D25BC3CD800A4A298 /* InitialWireframe.swift */,
+			);
+			path = Wireframe;
+			sourceTree = "<group>";
+		};
+		9F34497125BC3D3C00A4A298 /* Shared UI */ = {
+			isa = PBXGroup;
+			children = (
+				9F34497225BC3D4400A4A298 /* UIViewController+Extension.swift */,
+			);
+			path = "Shared UI";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -261,6 +313,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F34496725BC3C9300A4A298 /* Initial.storyboard in Resources */,
 				9F34491525BC02AB00A4A298 /* LaunchScreen.storyboard in Resources */,
 				9F34491225BC02AB00A4A298 /* Assets.xcassets in Resources */,
 			);
@@ -287,7 +340,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F34496125BC3BE100A4A298 /* InitialViewController.swift in Sources */,
+				9F34496E25BC3CD800A4A298 /* InitialWireframe.swift in Sources */,
 				9F34490925BC02A800A4A298 /* AppDelegate.swift in Sources */,
+				9F34497325BC3D4400A4A298 /* UIViewController+Extension.swift in Sources */,
 				9F34490B25BC02A800A4A298 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
