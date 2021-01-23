@@ -83,6 +83,9 @@ class SearchSpotifyAPITests: XCTestCase {
     
     func makeURLSession() -> URLSession {
         let sessionConfiguration = URLSessionConfiguration.ephemeral
+        sessionConfiguration.httpAdditionalHeaders = ["Accept": "application/json",
+                                                      "Content-Type": "application/json",
+                                                      "Authorization": "Bearer BQCT7oCDv8Ud23CAcCmj8-UPyHKw4P4TQDJXDK4mnXHz096hUzjyR8WoN1S1SkIffZStQkTpxsndmPNr6MGpRFm7ZEzcnbDuesat9pr0aNLdb1aU2vvCG6V7lJLWm_gQH02L42kDKADSs0I"]
         return URLSession(configuration: sessionConfiguration)
     }
 }
