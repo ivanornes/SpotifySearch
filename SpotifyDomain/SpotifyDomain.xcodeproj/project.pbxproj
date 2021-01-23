@@ -15,6 +15,8 @@
 		9F3449E125BCC87600A4A298 /* ExternalUrls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3449E025BCC87600A4A298 /* ExternalUrls.swift */; };
 		9F3449EB25BCCA5400A4A298 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3449EA25BCCA5400A4A298 /* Image.swift */; };
 		9F3449F725BCCAB500A4A298 /* Followers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3449F625BCCAB500A4A298 /* Followers.swift */; };
+		9F344A1C25BCD59700A4A298 /* ExternalIDS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F344A1B25BCD59700A4A298 /* ExternalIDS.swift */; };
+		9F344A2025BCD5B800A4A298 /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F344A1F25BCD5B800A4A298 /* Track.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +41,8 @@
 		9F3449E025BCC87600A4A298 /* ExternalUrls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExternalUrls.swift; sourceTree = "<group>"; };
 		9F3449EA25BCCA5400A4A298 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		9F3449F625BCCAB500A4A298 /* Followers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Followers.swift; sourceTree = "<group>"; };
+		9F344A1B25BCD59700A4A298 /* ExternalIDS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExternalIDS.swift; sourceTree = "<group>"; };
+		9F344A1F25BCD5B800A4A298 /* Track.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +109,8 @@
 				9F3449E025BCC87600A4A298 /* ExternalUrls.swift */,
 				9F3449EA25BCCA5400A4A298 /* Image.swift */,
 				9F3449F625BCCAB500A4A298 /* Followers.swift */,
+				9F344A1B25BCD59700A4A298 /* ExternalIDS.swift */,
+				9F344A1F25BCD5B800A4A298 /* Track.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -223,6 +229,8 @@
 				9F3449F725BCCAB500A4A298 /* Followers.swift in Sources */,
 				9F3449EB25BCCA5400A4A298 /* Image.swift in Sources */,
 				9F3449E125BCC87600A4A298 /* ExternalUrls.swift in Sources */,
+				9F344A1C25BCD59700A4A298 /* ExternalIDS.swift in Sources */,
+				9F344A2025BCD5B800A4A298 /* Track.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
