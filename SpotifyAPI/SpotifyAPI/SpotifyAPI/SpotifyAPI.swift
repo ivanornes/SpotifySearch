@@ -69,7 +69,9 @@ public class SpotifyAPI {
         components.path = url.path + "/v1/search"
         components.queryItems = [
             URLQueryItem(name: "q", value: criteria.text),
-            URLQueryItem(name: "type", value: criteria.type.rawValue)
+            URLQueryItem(name: "type", value: criteria.type.rawValue),
+            URLQueryItem(name: "offset", value: "\(criteria.offset)"),
+            URLQueryItem(name: "limit", value: "\(criteria.limit)")
         ].compactMap { $0 }
         return components.url!
     }

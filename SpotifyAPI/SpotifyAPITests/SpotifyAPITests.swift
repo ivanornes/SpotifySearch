@@ -17,7 +17,7 @@ class SearchSpotifyAPITests: XCTestCase {
         let criteria = SearchCriteria(text: "noisia", type: .artist)
         let url = sut.getURLForCriteria(criteria)
         
-        XCTAssertEqual(url, URL(string: "https://api.spotify.com/v1/search?q=noisia&type=artist"))
+        XCTAssertEqual(url, URL(string: "https://api.spotify.com/v1/search?q=noisia&type=artist&offset=0&limit=20"))
     }
 
     func test_getURLForCriteria_correctlyComposesAlbumURL() {
@@ -26,7 +26,7 @@ class SearchSpotifyAPITests: XCTestCase {
         let criteria = SearchCriteria(text: "korn", type: .album)
         let url = sut.getURLForCriteria(criteria)
         
-        XCTAssertEqual(url, URL(string: "https://api.spotify.com/v1/search?q=korn&type=album"))
+        XCTAssertEqual(url, URL(string: "https://api.spotify.com/v1/search?q=korn&type=album&offset=0&limit=20"))
     }
     
     func test_getURLForCriteria_correctlyComposesTrackURL() {
@@ -35,7 +35,7 @@ class SearchSpotifyAPITests: XCTestCase {
         let criteria = SearchCriteria(text: "Asking Alexandria", type: .track)
         let url = sut.getURLForCriteria(criteria)
         
-        XCTAssertEqual(url, URL(string: "https://api.spotify.com/v1/search?q=Asking%20Alexandria&type=track"))
+        XCTAssertEqual(url, URL(string: "https://api.spotify.com/v1/search?q=Asking%20Alexandria&type=track&offset=0&limit=20"))
     }
     
     func test_searchRequest_returnsEmptyList() {
@@ -119,7 +119,7 @@ class SearchSpotifyAPITests: XCTestCase {
         let sessionConfiguration = URLSessionConfiguration.ephemeral
         sessionConfiguration.httpAdditionalHeaders = ["Accept": "application/json",
                                                       "Content-Type": "application/json",
-                                                      "Authorization": "Bearer BQAl9tphrX9t53wM57JCqc2cuLUCO-DGJzFN41Wv74MmvUOUFicGgS7B64itd3WAEj94-pLK0zTgK2HNKWLSzY0InRy9F_NVDi5cIrAtG1-e3Tb4Avb8NX4CLoXCpDnaMFPKcuH21lCTfXA"]
+                                                      "Authorization": "Bearer BQBTmVn6REuNzsPXoN5s0fOoKphjQQat7LYqlfWkn1HM3-GkW5a4mH_IwcGloZm7ZcU1gd6Vx0nWuFPPirmytEgoK53z-G5ELcNfkTtXLxCavV6u3wa5fPqczbrVhUONc3dkr84SH5gZPV0"]
         return URLSession(configuration: sessionConfiguration)
     }
 }
