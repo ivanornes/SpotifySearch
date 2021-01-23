@@ -64,6 +64,21 @@ class SearchSpotifyAPITests: XCTestCase {
         }
     }
     
+    func test_searchRequest_returnsArtistData() {
+        let sut = makeSUT()
+        let exp = expectation(description: "Wait for search result")
+        let criteria = SearchCriteria(text: "Danger", type: .artist)
+        try? sut.search(criteria) { result in
+            switch result {
+            case let .success(searchResults): XCTAssert(!searchResults.isEmpty)
+            case let .failure(error): XCTFail("Expected to fetch some data, got \(error.localizedDescription)")
+            }
+            exp.fulfill()
+        }
+        
+        wait(for: [exp], timeout: 1.0)
+    }
+    
     // MARK: Helper
     
     func makeSUT(file: StaticString = #file, line: UInt = #line) -> SpotifyAPI {

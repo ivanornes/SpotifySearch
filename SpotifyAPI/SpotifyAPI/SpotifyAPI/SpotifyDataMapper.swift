@@ -6,9 +6,12 @@
 //
 
 import Foundation
+import SpotifyDomain
 
 internal class SpotifyDataMapper {
     internal static func map(_ data: Data) throws -> [SearchItem] {
-        return []
+        let decoder = JSONDecoder()
+        let response = try decoder.decode(ArtistSearchResponse.self, from: data)
+        return response.artists.items
     }
 }

@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:SpotifyDomain/SpotifyDomain.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:SpotifySearch/SpotifySearch.xcodeproj">
    </FileRef>
    <FileRef

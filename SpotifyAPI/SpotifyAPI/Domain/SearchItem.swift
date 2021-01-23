@@ -7,5 +7,4 @@
 
 import Foundation
 
-public struct SearchItem {
-}
+public typealias SearchItem = Any
