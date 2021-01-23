@@ -44,6 +44,8 @@ class SearchSpotifyAPITests: XCTestCase {
         let url = makeURL()
         let sut = SpotifyAPI(url: url, client: httpClient)
         trackForMemoryLeaks(sut, file: file, line: line)
+        trackForMemoryLeaks(session, file: file, line: line)
+        trackForMemoryLeaks(httpClient, file: file, line: line)
         return sut
     }
     
