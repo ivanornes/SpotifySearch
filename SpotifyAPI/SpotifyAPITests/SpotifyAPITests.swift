@@ -12,37 +12,37 @@ import SpotifyDomain
 class SearchSpotifyAPITests: XCTestCase {
 
     func test_getURLForCriteria_correctlyComposesArtistURL() {
-        let sut = makeSUT()
+        let baseURL = makeURL()
         
         let criteria = SearchCriteria(text: "noisia", type: .artist)
-        let url = sut.getURLForCriteria(criteria)
+        let url = SpotifyAPI.getURLForCriteria(baseURL: baseURL, criteria)
         
         XCTAssertEqual(url, URL(string: "https://api.spotify.com/v1/search?q=noisia&type=artist&offset=0&limit=20"))
     }
 
     func test_getURLForCriteria_correctlyComposesAlbumURL() {
-        let sut = makeSUT()
+        let baseURL = makeURL()
         
         let criteria = SearchCriteria(text: "korn", type: .album)
-        let url = sut.getURLForCriteria(criteria)
+        let url = SpotifyAPI.getURLForCriteria(baseURL: baseURL, criteria)
         
         XCTAssertEqual(url, URL(string: "https://api.spotify.com/v1/search?q=korn&type=album&offset=0&limit=20"))
     }
     
     func test_getURLForCriteria_correctlyComposesTrackURL() {
-        let sut = makeSUT()
+        let baseURL = makeURL()
         
         let criteria = SearchCriteria(text: "Asking Alexandria", type: .track)
-        let url = sut.getURLForCriteria(criteria)
+        let url = SpotifyAPI.getURLForCriteria(baseURL: baseURL, criteria)
         
         XCTAssertEqual(url, URL(string: "https://api.spotify.com/v1/search?q=Asking%20Alexandria&type=track&offset=0&limit=20"))
     }
 
     func test_getURLForCriteria_correctlyComposesTrackURLWithNonDefaultOffsetAndLimit() {
-        let sut = makeSUT()
+        let baseURL = makeURL()
         
         let criteria = SearchCriteria(text: "Asking Alexandria", type: .track, offset: 1, limit: 40)
-        let url = sut.getURLForCriteria(criteria)
+        let url = SpotifyAPI.getURLForCriteria(baseURL: baseURL, criteria)
         
         XCTAssertEqual(url, URL(string: "https://api.spotify.com/v1/search?q=Asking%20Alexandria&type=track&offset=1&limit=40"))
     }
@@ -96,8 +96,26 @@ class SearchSpotifyAPITests: XCTestCase {
         try? sut.search(criteria) { result in
             switch result {
             case let .success(searchResults):
-                if (searchResults is [APIArtists]) {
+                if !(searchResults is [APIArtist]) {
                     XCTFail("Expected an array of artists")
+                }
+            case let .failure(error): XCTFail("Expected to fetch some data, got \(error.localizedDescription)")
+            }
+            exp.fulfill()
+        }
+        
+        wait(for: [exp], timeout: 1.0)
+    }
+
+    func test_searchRequest_albumSearchReturnsAPIAlbumModels() {
+        let sut = makeSUT()
+        let exp = expectation(description: "Wait for search result")
+        let criteria = SearchCriteria(text: "Neurosis", type: .album)
+        try? sut.search(criteria) { result in
+            switch result {
+            case let .success(searchResults):
+                if !(searchResults is [APIAlbum]) {
+                    XCTFail("Expected an array of album")
                 }
             case let .failure(error): XCTFail("Expected to fetch some data, got \(error.localizedDescription)")
             }

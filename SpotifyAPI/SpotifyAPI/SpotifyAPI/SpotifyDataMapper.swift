@@ -9,9 +9,15 @@ import Foundation
 import SpotifyDomain
 
 internal class SpotifyDataMapper {
-    internal static func map(_ data: Data) throws -> [APISearchItem] {
+    internal static func mapArtists(_ data: Data) throws -> [APISearchItem] {
         let decoder = JSONDecoder()
         let response = try decoder.decode(APIArtistSearchResponse.self, from: data)
         return response.artists.items
+    }
+    
+    internal static func mapAlbums(_ data: Data) throws -> [APISearchItem] {
+        let decoder = JSONDecoder()
+        let response = try decoder.decode(APIAlbumsSearchResponse.self, from: data)
+        return response.albums.items
     }
 }

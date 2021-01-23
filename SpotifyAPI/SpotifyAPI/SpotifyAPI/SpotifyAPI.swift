@@ -44,12 +44,13 @@ public class SpotifyAPI {
     
     public func search(_ criteria: SearchCriteria, onCompletion: @escaping (SearchResult) -> Void) throws {
         guard !criteria.text.isEmpty else { throw Error.emptyString }
-        client.get(from: getURLForCriteria(criteria)) { result in
+        let endpointURL = SpotifyAPI.getURLForCriteria(baseURL: url, criteria)
+        client.get(from: endpointURL) { result in
             switch result {
             case let .success((data, response)):
                 if response.statusCode == 200 {
                     do {
-                        let searchItems = try SpotifyDataMapper.map(data)
+                        let searchItems = try SpotifyAPI.map(data: data, for: criteria.type)
                         onCompletion(.success(searchItems))
                     } catch {
                         onCompletion(.failure(Error.invalidData))
@@ -62,11 +63,19 @@ public class SpotifyAPI {
         }
     }
     
-    public func getURLForCriteria(_ criteria: SearchCriteria) -> URL {
+    private static func map(data: Data, for searchType: SearchType) throws -> [APISearchItem] {
+        switch searchType {
+        case .album: return try SpotifyDataMapper.mapAlbums(data)
+        case .artist: return try SpotifyDataMapper.mapArtists(data)
+        case .track: return try SpotifyDataMapper.mapArtists(data)
+        }
+    }
+    
+    public static func getURLForCriteria(baseURL: URL, _ criteria: SearchCriteria) -> URL {
         var components = URLComponents()
-        components.scheme = url.scheme
-        components.host = url.host
-        components.path = url.path + "/v1/search"
+        components.scheme = baseURL.scheme
+        components.host = baseURL.host
+        components.path = baseURL.path + "/v1/search"
         components.queryItems = [
             URLQueryItem(name: "q", value: criteria.text),
             URLQueryItem(name: "type", value: criteria.type.rawValue),
