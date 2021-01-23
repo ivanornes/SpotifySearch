@@ -37,6 +37,15 @@ class SearchSpotifyAPITests: XCTestCase {
         
         XCTAssertEqual(url, URL(string: "https://api.spotify.com/v1/search?q=Asking%20Alexandria&type=track&offset=0&limit=20"))
     }
+
+    func test_getURLForCriteria_correctlyComposesTrackURLWithNonDefaultOffsetAndLimit() {
+        let sut = makeSUT()
+        
+        let criteria = SearchCriteria(text: "Asking Alexandria", type: .track, offset: 1, limit: 40)
+        let url = sut.getURLForCriteria(criteria)
+        
+        XCTAssertEqual(url, URL(string: "https://api.spotify.com/v1/search?q=Asking%20Alexandria&type=track&offset=1&limit=40"))
+    }
     
     func test_searchRequest_returnsEmptyList() {
         let sut = makeSUT()
