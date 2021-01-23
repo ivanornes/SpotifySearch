@@ -17,8 +17,29 @@ protocol HTTPClient {
     func get(from url: URL, completion: @escaping (Result) -> Void)
 }
 
-class SpotifyHTTPClient: HTTPClient {
+class URLSessionHTTPClient: HTTPClient {
+    
+    private let session: URLSession
+    
+    enum Error: Swift.Error {
+        case unexpectedData
+    }
+    
+    init(session: URLSession) {
+        self.session = session
+    }
+    
     func get(from url: URL, completion: @escaping (HTTPClient.Result) -> Void) {
+        let task = session.dataTask(with: url) { data, response, error in
+            if let error = error {
+                completion(.failure(error))
+            } else if let data = data, let response = response as? HTTPURLResponse {
+                completion(.success((data, response)))
+            } else {
+                completion(.failure(Error.unexpectedData))
+            }
+        }
+        task.resume()
     }
 }
 
@@ -98,7 +119,8 @@ class SearchSpotifyAPITests: XCTestCase {
     // MARK: Helper
     
     func makeSUT(file: StaticString = #file, line: UInt = #line) -> SpotifyAPI {
-        let httpClient = SpotifyHTTPClient()
+        let session = makeURLSession()
+        let httpClient = URLSessionHTTPClient(session: session)
         let url = makeURL()
         let sut = SpotifyAPI(url: url, client: httpClient)
         trackForMemoryLeaks(sut, file: file, line: line)
@@ -107,5 +129,10 @@ class SearchSpotifyAPITests: XCTestCase {
     
     func makeURL() -> URL {
         URL(string: "https://api.spotify.com/v1/search?")!
+    }
+    
+    func makeURLSession() -> URLSession {
+        let sessionConfiguration = URLSessionConfiguration.ephemeral
+        return URLSession(configuration: sessionConfiguration)
     }
 }
