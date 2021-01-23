@@ -11,6 +11,11 @@
 		9F3448C925BB73E500A4A298 /* SpotifyAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3448C825BB73E500A4A298 /* SpotifyAPITests.swift */; };
 		9F3448CB25BB73E500A4A298 /* SpotifyAPI.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F3448BD25BB73E400A4A298 /* SpotifyAPI.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9F3448D825BB775500A4A298 /* XCTestCase+MemoryLeakTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3448D725BB775500A4A298 /* XCTestCase+MemoryLeakTracking.swift */; };
+		9F3448E525BBFAEF00A4A298 /* SpotifyAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3448E425BBFAEF00A4A298 /* SpotifyAPI.swift */; };
+		9F3448E925BBFB2600A4A298 /* SpotifyDataMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3448E825BBFB2600A4A298 /* SpotifyDataMapper.swift */; };
+		9F3448EE25BBFB6B00A4A298 /* URLSessionHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3448ED25BBFB6B00A4A298 /* URLSessionHTTPClient.swift */; };
+		9F3448F425BBFB8200A4A298 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3448F325BBFB8200A4A298 /* HTTPClient.swift */; };
+		9F3448F925BBFBA400A4A298 /* SearchItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3448F825BBFBA400A4A298 /* SearchItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,6 +36,11 @@
 		9F3448C825BB73E500A4A298 /* SpotifyAPITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyAPITests.swift; sourceTree = "<group>"; };
 		9F3448CA25BB73E500A4A298 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9F3448D725BB775500A4A298 /* XCTestCase+MemoryLeakTracking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+MemoryLeakTracking.swift"; sourceTree = "<group>"; };
+		9F3448E425BBFAEF00A4A298 /* SpotifyAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyAPI.swift; sourceTree = "<group>"; };
+		9F3448E825BBFB2600A4A298 /* SpotifyDataMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyDataMapper.swift; sourceTree = "<group>"; };
+		9F3448ED25BBFB6B00A4A298 /* URLSessionHTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionHTTPClient.swift; sourceTree = "<group>"; };
+		9F3448F325BBFB8200A4A298 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
+		9F3448F825BBFBA400A4A298 /* SearchItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +84,9 @@
 			isa = PBXGroup;
 			children = (
 				9F3448BD25BB73E400A4A298 /* SpotifyAPI.h */,
+				9F3448F725BBFB9E00A4A298 /* Domain */,
+				9F3448EC25BBFB4300A4A298 /* Networking */,
+				9F3448E325BBFAE200A4A298 /* SpotifyAPI */,
 				9F3448BE25BB73E400A4A298 /* Info.plist */,
 			);
 			path = SpotifyAPI;
@@ -95,6 +108,32 @@
 				9F3448D725BB775500A4A298 /* XCTestCase+MemoryLeakTracking.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		9F3448E325BBFAE200A4A298 /* SpotifyAPI */ = {
+			isa = PBXGroup;
+			children = (
+				9F3448E425BBFAEF00A4A298 /* SpotifyAPI.swift */,
+				9F3448E825BBFB2600A4A298 /* SpotifyDataMapper.swift */,
+			);
+			path = SpotifyAPI;
+			sourceTree = "<group>";
+		};
+		9F3448EC25BBFB4300A4A298 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				9F3448ED25BBFB6B00A4A298 /* URLSessionHTTPClient.swift */,
+				9F3448F325BBFB8200A4A298 /* HTTPClient.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		9F3448F725BBFB9E00A4A298 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				9F3448F825BBFBA400A4A298 /* SearchItem.swift */,
+			);
+			path = Domain;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -158,6 +197,7 @@
 				TargetAttributes = {
 					9F3448B925BB73E400A4A298 = {
 						CreatedOnToolsVersion = 12.3;
+						LastSwiftMigration = 1230;
 					};
 					9F3448C225BB73E500A4A298 = {
 						CreatedOnToolsVersion = 12.3;
@@ -205,6 +245,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F3448E525BBFAEF00A4A298 /* SpotifyAPI.swift in Sources */,
+				9F3448E925BBFB2600A4A298 /* SpotifyDataMapper.swift in Sources */,
+				9F3448F425BBFB8200A4A298 /* HTTPClient.swift in Sources */,
+				9F3448EE25BBFB6B00A4A298 /* URLSessionHTTPClient.swift in Sources */,
+				9F3448F925BBFBA400A4A298 /* SearchItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -352,6 +397,7 @@
 		9F3448CF25BB73E500A4A298 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
@@ -369,6 +415,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ivanornes.SpotifyAPI;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -376,6 +423,7 @@
 		9F3448D025BB73E500A4A298 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
@@ -400,6 +448,7 @@
 		9F3448D225BB73E500A4A298 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 36V5S393N9;
@@ -418,6 +467,7 @@
 		9F3448D325BB73E500A4A298 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 36V5S393N9;
