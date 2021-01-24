@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class SearchViewController: UIViewController, SearchViewProtocol {
+final class SearchViewController: UITableViewController, SearchViewProtocol {
     var presenter: SearchViewPresenterProtocol?
     
     func show(_ sections: [TableCellController]...) {
