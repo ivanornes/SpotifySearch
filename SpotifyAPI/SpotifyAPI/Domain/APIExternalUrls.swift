@@ -6,7 +6,12 @@
 //
 
 import Foundation
+import SpotifyDomain
 
 public struct APIExternalUrls: Codable {
     public let spotify: String
+    
+    public var externalUrls: ExternalUrls {
+        .init(spotify: spotify)
+    }
 }

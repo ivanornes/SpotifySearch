@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SpotifyDomain
 
 public struct APIAlbum: Codable {
     public let albumType: String
@@ -22,6 +23,22 @@ public struct APIAlbum: Codable {
     public let type: String
     public let uri: String
 
+    public var album: Album {
+        .init(albumType: albumType,
+              artists: artists.map { $0.artist},
+              availableMarkets: availableMarkets,
+              externalUrls: externalUrls.externalUrls,
+              href: href,
+              id: id,
+              images: images.map { $0.image },
+              name: name,
+              releaseDate: releaseDate,
+              releaseDatePrecision: releaseDatePrecision,
+              totalTracks: totalTracks,
+              type: type,
+              uri: uri)
+    }
+    
     enum CodingKeys: String, CodingKey {
         case albumType = "album_type"
         case artists

@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SpotifyDomain
 
 public struct APIArtist: Codable {
     public let externalUrls: APIExternalUrls
@@ -18,6 +19,19 @@ public struct APIArtist: Codable {
     public let popularity: Int?
     public let type: String
     public let uri: String
+    
+    public var artist: Artist {
+        .init(externalUrls: externalUrls.externalUrls,
+              followers: followers?.followers,
+              genres: genres,
+              href: href,
+              id: id,
+              images: images,
+              name: name,
+              popularity: popularity,
+              type: type,
+              uri: uri)
+    }
     
     enum CodingKeys: String, CodingKey {
         case externalUrls = "external_urls"
