@@ -15,7 +15,6 @@
 		9F3448E925BBFB2600A4A298 /* SpotifyDataMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3448E825BBFB2600A4A298 /* SpotifyDataMapper.swift */; };
 		9F3448EE25BBFB6B00A4A298 /* URLSessionHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3448ED25BBFB6B00A4A298 /* URLSessionHTTPClient.swift */; };
 		9F3448F425BBFB8200A4A298 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3448F325BBFB8200A4A298 /* HTTPClient.swift */; };
-		9F3448F925BBFBA400A4A298 /* APISearchItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3448F825BBFBA400A4A298 /* APISearchItem.swift */; };
 		9F3449D825BC553100A4A298 /* SpotifyDomain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F3449D725BC553100A4A298 /* SpotifyDomain.framework */; };
 		9F3449D925BC553100A4A298 /* SpotifyDomain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9F3449D725BC553100A4A298 /* SpotifyDomain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9F3449E525BCC9D500A4A298 /* APIAlbumsSearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3449E425BCC9D500A4A298 /* APIAlbumsSearchResponse.swift */; };
@@ -32,6 +31,8 @@
 		9F344A1625BCD3B400A4A298 /* APITrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F344A1525BCD3B400A4A298 /* APITrack.swift */; };
 		9F344A1925BCD3C800A4A298 /* APITracks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F344A1825BCD3C800A4A298 /* APITracks.swift */; };
 		9F344A2425BD8A8B00A4A298 /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F344A2325BD8A8B00A4A298 /* APIConstants.swift */; };
+		9F344AB225BD939800A4A298 /* SpotifySearchDomain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F344AB125BD939800A4A298 /* SpotifySearchDomain.framework */; };
+		9F344AB325BD939800A4A298 /* SpotifySearchDomain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9F344AB125BD939800A4A298 /* SpotifySearchDomain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				9F3449D925BC553100A4A298 /* SpotifyDomain.framework in Embed Frameworks */,
+				9F344AB325BD939800A4A298 /* SpotifySearchDomain.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -70,7 +72,6 @@
 		9F3448E825BBFB2600A4A298 /* SpotifyDataMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyDataMapper.swift; sourceTree = "<group>"; };
 		9F3448ED25BBFB6B00A4A298 /* URLSessionHTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionHTTPClient.swift; sourceTree = "<group>"; };
 		9F3448F325BBFB8200A4A298 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
-		9F3448F825BBFBA400A4A298 /* APISearchItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APISearchItem.swift; sourceTree = "<group>"; };
 		9F3449D725BC553100A4A298 /* SpotifyDomain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SpotifyDomain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F3449E425BCC9D500A4A298 /* APIAlbumsSearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIAlbumsSearchResponse.swift; sourceTree = "<group>"; };
 		9F3449E725BCC9EA00A4A298 /* APIAlbums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIAlbums.swift; sourceTree = "<group>"; };
@@ -86,6 +87,7 @@
 		9F344A1525BCD3B400A4A298 /* APITrack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APITrack.swift; sourceTree = "<group>"; };
 		9F344A1825BCD3C800A4A298 /* APITracks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APITracks.swift; sourceTree = "<group>"; };
 		9F344A2325BD8A8B00A4A298 /* APIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
+		9F344AB125BD939800A4A298 /* SpotifySearchDomain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SpotifySearchDomain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +96,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9F3449D825BC553100A4A298 /* SpotifyDomain.framework in Frameworks */,
+				9F344AB225BD939800A4A298 /* SpotifySearchDomain.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -179,7 +182,6 @@
 		9F3448F725BBFB9E00A4A298 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
-				9F3448F825BBFBA400A4A298 /* APISearchItem.swift */,
 				9F3449E425BCC9D500A4A298 /* APIAlbumsSearchResponse.swift */,
 				9F3449F025BCCA7E00A4A298 /* APIArtistSearchResponse.swift */,
 				9F344A0F25BCD25A00A4A298 /* APITrackSearchResponse.swift */,
@@ -200,6 +202,7 @@
 		9F3449D625BC553100A4A298 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9F344AB125BD939800A4A298 /* SpotifySearchDomain.framework */,
 				9F3449D725BC553100A4A298 /* SpotifyDomain.framework */,
 			);
 			name = Frameworks;
@@ -329,7 +332,6 @@
 				9F3449E825BCC9EA00A4A298 /* APIAlbums.swift in Sources */,
 				9F3448EE25BBFB6B00A4A298 /* URLSessionHTTPClient.swift in Sources */,
 				9F344A1325BCD39B00A4A298 /* APIExternalIDS.swift in Sources */,
-				9F3448F925BBFBA400A4A298 /* APISearchItem.swift in Sources */,
 				9F3449FB25BCCBCD00A4A298 /* APIArtist.swift in Sources */,
 				9F344A1625BCD3B400A4A298 /* APITrack.swift in Sources */,
 				9F3449FE25BCCC0E00A4A298 /* APIExternalUrls.swift in Sources */,

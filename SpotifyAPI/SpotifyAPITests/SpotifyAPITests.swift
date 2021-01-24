@@ -7,6 +7,8 @@
 
 import XCTest
 import SpotifyDomain
+import SpotifySearchDomain
+
 @testable import SpotifyAPI
 
 class SearchSpotifyAPITests: XCTestCase {
@@ -89,7 +91,7 @@ class SearchSpotifyAPITests: XCTestCase {
         wait(for: [exp], timeout: 1.0)
     }
 
-    func test_searchRequest_artistSearchReturnsAPIArtistModels() {
+    func test_searchRequest_artistSearchReturnsArtistModels() {
         let sut = makeSUT()
         let exp = expectation(description: "Wait for search result")
         let criteria = SearchCriteria(text: "Danger", type: .artist)
@@ -107,7 +109,7 @@ class SearchSpotifyAPITests: XCTestCase {
         wait(for: [exp], timeout: 1.0)
     }
 
-    func test_searchRequest_albumSearchReturnsAPIAlbumModels() {
+    func test_searchRequest_albumSearchReturnsAlbumModels() {
         let sut = makeSUT()
         let exp = expectation(description: "Wait for search result")
         let criteria = SearchCriteria(text: "Neurosis", type: .album)
@@ -125,7 +127,7 @@ class SearchSpotifyAPITests: XCTestCase {
         wait(for: [exp], timeout: 1.0)
     }
     
-    func test_searchRequest_trackSearchReturnsAPITrackModels() {
+    func test_searchRequest_trackSearchReturnsTrackModels() {
         let sut = makeSUT()
         let exp = expectation(description: "Wait for search result")
         let criteria = SearchCriteria(text: "ISIS", type: .track)

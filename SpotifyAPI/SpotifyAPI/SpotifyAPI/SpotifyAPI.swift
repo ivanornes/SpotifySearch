@@ -6,27 +6,10 @@
 //
 
 import Foundation
+import SpotifyDomain
+import SpotifySearchDomain
 
-public enum SearchType: String {
-    case album, artist, track
-}
-
-public struct SearchCriteria {
-    public let text: String
-    public let type: SearchType
-    public let offset: UInt
-    public let limit: UInt
-    
-    public init(text: String, type: SearchType, offset: UInt = 0, limit: UInt = 20) {
-        self.text = text
-        self.type = type
-        self.offset = offset
-        self.limit = limit
-    }
-}
-
-public class SpotifyAPI {
-    public typealias SearchResult = Result<[APISearchItem], Swift.Error>
+public class SpotifyAPI: SearchAPIProtocol {
     
     public enum Error: Swift.Error {
         case emptyString
@@ -63,7 +46,7 @@ public class SpotifyAPI {
         }
     }
     
-    private static func map(data: Data, for searchType: SearchType) throws -> [APISearchItem] {
+    private static func map(data: Data, for searchType: SearchType) throws -> [SearchItem] {
         switch searchType {
         case .album: return try SpotifyDataMapper.mapAlbums(data)
         case .artist: return try SpotifyDataMapper.mapArtists(data)
