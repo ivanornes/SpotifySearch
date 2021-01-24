@@ -17,4 +17,8 @@ final class SearchViewInteractor: SearchViewInteractorInputProtocol {
     init(searchEngine: SearchEngineProtocol) {
         self.searchEngine = searchEngine
     }
+    
+    func searchText(_ text: String) {
+        print(text)
+    }
 }

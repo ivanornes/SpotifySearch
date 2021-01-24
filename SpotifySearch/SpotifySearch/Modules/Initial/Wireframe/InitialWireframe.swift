@@ -15,8 +15,7 @@ public final class InitialWireframe {
     public static func composeUI(with searchEngine: SearchEngineProtocol) -> UIViewController {
         let vc = makeInitialViewController(title: "Initial")
         vc.generateSearchController = {
-            let vc = SearchControllerWireframe.composeUI(searchEngine: searchEngine)
-            return UISearchController(searchResultsController: vc)
+            SearchControllerWireframe.composeUI(searchEngine: searchEngine)
         }
         return vc
     }
