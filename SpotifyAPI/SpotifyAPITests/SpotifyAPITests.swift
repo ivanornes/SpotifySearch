@@ -164,7 +164,7 @@ class SearchSpotifyAPITests: XCTestCase {
         let sessionConfiguration = URLSessionConfiguration.ephemeral
         sessionConfiguration.httpAdditionalHeaders = ["Accept": "application/json",
                                                       "Content-Type": "application/json",
-                                                      "Authorization": "Bearer BQA0YGieHqGIA0JRSobjQGgmAiDy310yQewNMfEWlvosqkTtHFNZOAm-Mfqw2QniQQKA3LwgfKEA9x-1bEttvoiZbamFZ7HaEmvfZ2GQa57-KJ1dIM_bPAWNTdRhClQCyDFr26DlqxGMSno"]
+                                                      "Authorization": "Bearer \(APIConstants.bearer)"]
         return URLSession(configuration: sessionConfiguration)
     }
 }

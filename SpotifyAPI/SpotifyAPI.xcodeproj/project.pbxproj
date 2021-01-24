@@ -31,6 +31,7 @@
 		9F344A1325BCD39B00A4A298 /* APIExternalIDS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F344A1225BCD39B00A4A298 /* APIExternalIDS.swift */; };
 		9F344A1625BCD3B400A4A298 /* APITrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F344A1525BCD3B400A4A298 /* APITrack.swift */; };
 		9F344A1925BCD3C800A4A298 /* APITracks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F344A1825BCD3C800A4A298 /* APITracks.swift */; };
+		9F344A2425BD8A8B00A4A298 /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F344A2325BD8A8B00A4A298 /* APIConstants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +85,7 @@
 		9F344A1225BCD39B00A4A298 /* APIExternalIDS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIExternalIDS.swift; sourceTree = "<group>"; };
 		9F344A1525BCD3B400A4A298 /* APITrack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APITrack.swift; sourceTree = "<group>"; };
 		9F344A1825BCD3C800A4A298 /* APITracks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APITracks.swift; sourceTree = "<group>"; };
+		9F344A2325BD8A8B00A4A298 /* APIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +153,7 @@
 			isa = PBXGroup;
 			children = (
 				9F3448D725BB775500A4A298 /* XCTestCase+MemoryLeakTracking.swift */,
+				9F344A2325BD8A8B00A4A298 /* APIConstants.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -339,6 +342,7 @@
 			files = (
 				9F3448C925BB73E500A4A298 /* SpotifyAPITests.swift in Sources */,
 				9F3448D825BB775500A4A298 /* XCTestCase+MemoryLeakTracking.swift in Sources */,
+				9F344A2425BD8A8B00A4A298 /* APIConstants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
