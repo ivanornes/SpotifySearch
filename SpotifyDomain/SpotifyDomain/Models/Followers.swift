@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct Followers {
+public struct Followers: Hashable {
     public let href: String?
     public let total: Int
     

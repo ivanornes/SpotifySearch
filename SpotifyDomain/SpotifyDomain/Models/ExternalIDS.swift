@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct ExternalIDS {
+public struct ExternalIDS: Hashable {
     public let isrc: String
     
     public init(isrc: String) {

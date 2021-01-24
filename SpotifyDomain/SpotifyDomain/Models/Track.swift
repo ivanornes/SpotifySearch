@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct Track {
+public struct Track: Hashable {
     public let album: Album
     public let artists: [Artist]
     public let availableMarkets: [String]

@@ -7,7 +7,8 @@
 
 import Foundation
 
-public struct Artist {
+public struct Artist: Hashable {
+    
     public let externalUrls: ExternalUrls
     public let followers: Followers?
     public let genres: [String]?

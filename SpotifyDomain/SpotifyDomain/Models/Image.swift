@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct Image {
+public struct Image: Hashable {
     public let height: Int
     public let url: String
     public let width: Int

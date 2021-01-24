@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct Album {
+public struct Album: Hashable {
     public let albumType: String
     public let artists: [Artist]
     public let availableMarkets: [String]

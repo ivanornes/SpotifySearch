@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct ExternalUrls {
+public struct ExternalUrls: Hashable {
     public let spotify: String
     
     public init(spotify: String) {
