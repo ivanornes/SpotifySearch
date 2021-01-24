@@ -19,6 +19,8 @@
 		9F34496725BC3C9300A4A298 /* Initial.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F34496625BC3C9300A4A298 /* Initial.storyboard */; };
 		9F34496E25BC3CD800A4A298 /* InitialWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F34496D25BC3CD800A4A298 /* InitialWireframe.swift */; };
 		9F34497325BC3D4400A4A298 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F34497225BC3D4400A4A298 /* UIViewController+Extension.swift */; };
+		9F344AD725BE0FF000A4A298 /* SearchControllerWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F344AD625BE0FEF00A4A298 /* SearchControllerWireframe.swift */; };
+		9F344ADB25BE0FFC00A4A298 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F344ADA25BE0FFC00A4A298 /* SearchViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +72,8 @@
 		9F34496625BC3C9300A4A298 /* Initial.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Initial.storyboard; sourceTree = "<group>"; };
 		9F34496D25BC3CD800A4A298 /* InitialWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialWireframe.swift; sourceTree = "<group>"; };
 		9F34497225BC3D4400A4A298 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		9F344AD625BE0FEF00A4A298 /* SearchControllerWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchControllerWireframe.swift; sourceTree = "<group>"; };
+		9F344ADA25BE0FFC00A4A298 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +174,7 @@
 		9F34494D25BC068800A4A298 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				9F344AD325BE0FB900A4A298 /* Search Controller */,
 				9F34495A25BC3B8500A4A298 /* Initial */,
 			);
 			path = Modules;
@@ -207,6 +212,31 @@
 				9F34497225BC3D4400A4A298 /* UIViewController+Extension.swift */,
 			);
 			path = "Shared UI";
+			sourceTree = "<group>";
+		};
+		9F344AD325BE0FB900A4A298 /* Search Controller */ = {
+			isa = PBXGroup;
+			children = (
+				9F344AD425BE0FC500A4A298 /* Wireframe */,
+				9F344AD525BE0FCB00A4A298 /* View */,
+			);
+			path = "Search Controller";
+			sourceTree = "<group>";
+		};
+		9F344AD425BE0FC500A4A298 /* Wireframe */ = {
+			isa = PBXGroup;
+			children = (
+				9F344AD625BE0FEF00A4A298 /* SearchControllerWireframe.swift */,
+			);
+			path = Wireframe;
+			sourceTree = "<group>";
+		};
+		9F344AD525BE0FCB00A4A298 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9F344ADA25BE0FFC00A4A298 /* SearchViewController.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -340,6 +370,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F344AD725BE0FF000A4A298 /* SearchControllerWireframe.swift in Sources */,
+				9F344ADB25BE0FFC00A4A298 /* SearchViewController.swift in Sources */,
 				9F34496125BC3BE100A4A298 /* InitialViewController.swift in Sources */,
 				9F34496E25BC3CD800A4A298 /* InitialWireframe.swift in Sources */,
 				9F34490925BC02A800A4A298 /* AppDelegate.swift in Sources */,
