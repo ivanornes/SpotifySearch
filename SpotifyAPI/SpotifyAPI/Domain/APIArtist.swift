@@ -26,7 +26,7 @@ public struct APIArtist: Codable {
               genres: genres,
               href: href,
               id: id,
-              images: images,
+              images: images?.map { $0.image },
               name: name,
               popularity: popularity,
               type: type,

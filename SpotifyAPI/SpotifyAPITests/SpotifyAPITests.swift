@@ -96,7 +96,7 @@ class SearchSpotifyAPITests: XCTestCase {
         try? sut.search(criteria) { result in
             switch result {
             case let .success(searchResults):
-                if !(searchResults is [APIArtist]) {
+                if !(searchResults is [Artist]) {
                     XCTFail("Expected an array of artists")
                 }
             case let .failure(error): XCTFail("Expected to fetch some data, got \(error.localizedDescription)")
@@ -114,7 +114,7 @@ class SearchSpotifyAPITests: XCTestCase {
         try? sut.search(criteria) { result in
             switch result {
             case let .success(searchResults):
-                if !(searchResults is [APIAlbum]) {
+                if !(searchResults is [Album]) {
                     XCTFail("Expected an array of album")
                 }
             case let .failure(error): XCTFail("Expected to fetch some data, got \(error.localizedDescription)")
@@ -132,7 +132,7 @@ class SearchSpotifyAPITests: XCTestCase {
         try? sut.search(criteria) { result in
             switch result {
             case let .success(searchResults):
-                if !(searchResults is [APITrack]) {
+                if !(searchResults is [Track]) {
                     XCTFail("Expected an array of album")
                 }
             case let .failure(error): XCTFail("Expected to fetch some data, got \(error.localizedDescription)")
@@ -164,7 +164,7 @@ class SearchSpotifyAPITests: XCTestCase {
         let sessionConfiguration = URLSessionConfiguration.ephemeral
         sessionConfiguration.httpAdditionalHeaders = ["Accept": "application/json",
                                                       "Content-Type": "application/json",
-                                                      "Authorization": "Bearer BQAlU1EUOJyD86HohG3c7VQSbaWEZOPk-xOObR_U3rUgfhFqY81bd5hg59tJg_ebGZiofF2tiabAi7sVPg_l8HhnVFFy42um6sNOhCnN3DfSgUJ_teyULocLrwH6J16oyhQ1CSw2B65TPeQ"]
+                                                      "Authorization": "Bearer BQA0YGieHqGIA0JRSobjQGgmAiDy310yQewNMfEWlvosqkTtHFNZOAm-Mfqw2QniQQKA3LwgfKEA9x-1bEttvoiZbamFZ7HaEmvfZ2GQa57-KJ1dIM_bPAWNTdRhClQCyDFr26DlqxGMSno"]
         return URLSession(configuration: sessionConfiguration)
     }
 }
