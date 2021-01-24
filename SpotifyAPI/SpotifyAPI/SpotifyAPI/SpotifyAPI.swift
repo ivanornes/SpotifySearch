@@ -64,7 +64,7 @@ public class SpotifyAPI: SearchAPIProtocol {
             URLQueryItem(name: "type", value: criteria.type.rawValue),
             URLQueryItem(name: "offset", value: "\(criteria.offset)"),
             URLQueryItem(name: "limit", value: "\(criteria.limit)")
-        ].compactMap { $0 }
+        ]
         return components.url!
     }
 }
