@@ -7,5 +7,12 @@
 
 import UIKit
 
-final class SearchViewController: UIViewController {
+final class SearchViewController: UIViewController, SearchViewProtocol {
+    var presenter: SearchViewPresenterProtocol?
+    
+    func show(_ sections: [TableCellController]...) {
+    }
+    
+    func showError() {
+    }
 }
