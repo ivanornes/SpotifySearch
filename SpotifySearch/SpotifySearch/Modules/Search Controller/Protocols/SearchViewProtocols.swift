@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SpotifySearchDomain
 
 public protocol SearchViewProtocol: class {
     func show(_ sections: [TableCellController]...)
@@ -19,6 +20,6 @@ public protocol SearchViewInteractorInputProtocol: class {
 }
 
 public protocol SearchViewInteractorOutputProtocol: class {
-    func show(_ results: [Any])
+    func show(_ results: SearchEngineResult)
     func showError()
 }

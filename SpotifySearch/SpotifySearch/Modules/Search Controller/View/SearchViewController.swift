@@ -12,7 +12,35 @@ final class SearchViewController: UITableViewController, SearchViewProtocol {
     
     var searchText: ((String) -> Void)!
     
+    private lazy var dataSource: UITableViewDiffableDataSource<Int, TableCellController> = {
+        .init(tableView: tableView, cellProvider: { tableView, indexPath, controller -> UITableViewCell? in
+            controller.dataSource.tableView(tableView, cellForRowAt: indexPath)
+        })
+    }()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        configureDataSource()
+        configureTableView()
+    }
+    
+    private func configureDataSource() {
+        tableView.dataSource = dataSource
+        dataSource.defaultRowAnimation = .top
+    }
+    
+    private func configureTableView() {
+        tableView.tableFooterView = .init()
+    }
+    
     func show(_ sections: [TableCellController]...) {
+        var snapshot = NSDiffableDataSourceSnapshot<Int, TableCellController>()
+        sections.enumerated().forEach { section, cellControllers in
+            snapshot.appendSections([section])
+            snapshot.appendItems(cellControllers, toSection: section)
+        }
+        dataSource.apply(snapshot)
     }
     
     func showError() {

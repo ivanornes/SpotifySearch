@@ -24,7 +24,7 @@ final class SearchControllerWireframe {
     }
     
     private static func makeSearchViewController(title: String) -> SearchViewController {
-        let vc = SearchViewController()
+        let vc = SearchViewController.instantiateInitialViewController(from: "Search")
         vc.title = title
         return vc
     }

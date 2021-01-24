@@ -34,6 +34,10 @@
 		9F344B1125BE17A400A4A298 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F344B1025BE17A400A4A298 /* Constants.swift */; };
 		9F344B1725BE188F00A4A298 /* Constants+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F344B1625BE188F00A4A298 /* Constants+Extension.swift */; };
 		9F344B1C25BE190800A4A298 /* SearchEngineBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F344B1B25BE190800A4A298 /* SearchEngineBuilder.swift */; };
+		9F344B2025BE21F300A4A298 /* AlbumSearchCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F344B1F25BE21F300A4A298 /* AlbumSearchCellController.swift */; };
+		9F344B2625BE22A100A4A298 /* ArtistSearchCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F344B2525BE22A100A4A298 /* ArtistSearchCellController.swift */; };
+		9F344B2A25BE22AA00A4A298 /* TrackSearchCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F344B2925BE22AA00A4A298 /* TrackSearchCellController.swift */; };
+		9F344B2E25BE256D00A4A298 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F344B2D25BE256D00A4A298 /* Search.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,6 +104,10 @@
 		9F344B1025BE17A400A4A298 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		9F344B1625BE188F00A4A298 /* Constants+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Constants+Extension.swift"; sourceTree = "<group>"; };
 		9F344B1B25BE190800A4A298 /* SearchEngineBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchEngineBuilder.swift; sourceTree = "<group>"; };
+		9F344B1F25BE21F300A4A298 /* AlbumSearchCellController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumSearchCellController.swift; sourceTree = "<group>"; };
+		9F344B2525BE22A100A4A298 /* ArtistSearchCellController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistSearchCellController.swift; sourceTree = "<group>"; };
+		9F344B2925BE22AA00A4A298 /* TrackSearchCellController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackSearchCellController.swift; sourceTree = "<group>"; };
+		9F344B2D25BE256D00A4A298 /* Search.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -273,6 +281,10 @@
 			isa = PBXGroup;
 			children = (
 				9F344ADA25BE0FFC00A4A298 /* SearchViewController.swift */,
+				9F344B2D25BE256D00A4A298 /* Search.storyboard */,
+				9F344B1F25BE21F300A4A298 /* AlbumSearchCellController.swift */,
+				9F344B2525BE22A100A4A298 /* ArtistSearchCellController.swift */,
+				9F344B2925BE22AA00A4A298 /* TrackSearchCellController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -424,6 +436,7 @@
 			files = (
 				9F34496725BC3C9300A4A298 /* Initial.storyboard in Resources */,
 				9F34491525BC02AB00A4A298 /* LaunchScreen.storyboard in Resources */,
+				9F344B2E25BE256D00A4A298 /* Search.storyboard in Resources */,
 				9F34491225BC02AB00A4A298 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -454,13 +467,16 @@
 				9F344ADB25BE0FFC00A4A298 /* SearchViewController.swift in Sources */,
 				9F34496125BC3BE100A4A298 /* InitialViewController.swift in Sources */,
 				9F34496E25BC3CD800A4A298 /* InitialWireframe.swift in Sources */,
+				9F344B2025BE21F300A4A298 /* AlbumSearchCellController.swift in Sources */,
 				9F344B1725BE188F00A4A298 /* Constants+Extension.swift in Sources */,
 				9F34490925BC02A800A4A298 /* AppDelegate.swift in Sources */,
+				9F344B2625BE22A100A4A298 /* ArtistSearchCellController.swift in Sources */,
 				9F344AE325BE11F000A4A298 /* SearchViewPresenter.swift in Sources */,
 				9F344AEF25BE12A000A4A298 /* TableCellController.swift in Sources */,
 				9F344B1C25BE190800A4A298 /* SearchEngineBuilder.swift in Sources */,
 				9F34497325BC3D4400A4A298 /* UIViewController+Extension.swift in Sources */,
 				9F344AEB25BE120300A4A298 /* SearchViewProtocols.swift in Sources */,
+				9F344B2A25BE22AA00A4A298 /* TrackSearchCellController.swift in Sources */,
 				9F34490B25BC02A800A4A298 /* SceneDelegate.swift in Sources */,
 				9F344B1125BE17A400A4A298 /* Constants.swift in Sources */,
 			);
