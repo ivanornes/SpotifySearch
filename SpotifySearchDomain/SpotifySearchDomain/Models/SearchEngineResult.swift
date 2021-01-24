@@ -1,6 +1,6 @@
 //
 //  SearchEngineResult.swift
-//  SpotifySearchEngine
+//  SpotifySearchDomain
 //
 //  Created by Ivan Ornes on 24/1/21.
 //

@@ -9,11 +9,10 @@ import UIKit
 
 final class InitialViewController: UIViewController {
     
-    private lazy var searchController: UISearchController = {
-        let vc = SearchControllerWireframe.composeUI()
-        return UISearchController(searchResultsController: vc)
-    }()
-
+    var generateSearchController: (() -> UISearchController)!
+    
+    private lazy var searchController: UISearchController = generateSearchController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupSearchController()

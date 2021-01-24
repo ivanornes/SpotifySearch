@@ -10,9 +10,10 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-
+    
     private lazy var navigationController: UINavigationController = {
-        UINavigationController(rootViewController: InitialWireframe.composeUI())
+        let vc = InitialWireframe.composeUI(with: SearchEngineBuilder().build)
+        return UINavigationController(rootViewController: vc)
     }()
     
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {

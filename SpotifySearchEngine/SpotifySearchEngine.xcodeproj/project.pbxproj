@@ -15,7 +15,6 @@
 		9F344A5225BD8EB000A4A298 /* SpotifyDomain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F344A5125BD8EB000A4A298 /* SpotifyDomain.framework */; };
 		9F344A5325BD8EB000A4A298 /* SpotifyDomain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9F344A5125BD8EB000A4A298 /* SpotifyDomain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9F344A5525BD8EC300A4A298 /* SpotifySearchEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F344A5425BD8EC300A4A298 /* SpotifySearchEngine.swift */; };
-		9F344AD125BE0BF700A4A298 /* SearchEngineResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F344AD025BE0BF700A4A298 /* SearchEngineResult.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,7 +52,6 @@
 		9F344A4D25BD8EAB00A4A298 /* SpotifyAPI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SpotifyAPI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F344A5125BD8EB000A4A298 /* SpotifyDomain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SpotifyDomain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F344A5425BD8EC300A4A298 /* SpotifySearchEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifySearchEngine.swift; sourceTree = "<group>"; };
-		9F344AD025BE0BF700A4A298 /* SearchEngineResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchEngineResult.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,7 +97,6 @@
 		9F344A3225BD8E3800A4A298 /* SpotifySearchEngine */ = {
 			isa = PBXGroup;
 			children = (
-				9F344ACD25BE0BE300A4A298 /* Model */,
 				9F344A3325BD8E3800A4A298 /* SpotifySearchEngine.h */,
 				9F344ACE25BE0BEB00A4A298 /* Engine */,
 				9F344A3425BD8E3800A4A298 /* Info.plist */,
@@ -123,14 +120,6 @@
 				9F344A4D25BD8EAB00A4A298 /* SpotifyAPI.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		9F344ACD25BE0BE300A4A298 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				9F344AD025BE0BF700A4A298 /* SearchEngineResult.swift */,
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		9F344ACE25BE0BEB00A4A298 /* Engine */ = {
@@ -251,7 +240,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9F344AD125BE0BF700A4A298 /* SearchEngineResult.swift in Sources */,
 				9F344A5525BD8EC300A4A298 /* SpotifySearchEngine.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

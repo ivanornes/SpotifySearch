@@ -15,6 +15,8 @@
 		9F344A9C25BD924100A4A298 /* SearchCriteria.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F344A9725BD924100A4A298 /* SearchCriteria.swift */; };
 		9F344AAE25BD935300A4A298 /* SearchAPIProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F344AAD25BD935300A4A298 /* SearchAPIProtocol.swift */; };
 		9F344AB625BD95A100A4A298 /* SearchItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F344AB525BD95A100A4A298 /* SearchItem.swift */; };
+		9F344AF725BE14AE00A4A298 /* SearchEngineProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F344AF625BE14AE00A4A298 /* SearchEngineProtocol.swift */; };
+		9F344AFC25BE14EC00A4A298 /* SearchEngineResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F344AFB25BE14EC00A4A298 /* SearchEngineResult.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +41,8 @@
 		9F344A9925BD924100A4A298 /* SearchType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchType.swift; sourceTree = "<group>"; };
 		9F344AAD25BD935300A4A298 /* SearchAPIProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchAPIProtocol.swift; sourceTree = "<group>"; };
 		9F344AB525BD95A100A4A298 /* SearchItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchItem.swift; sourceTree = "<group>"; };
+		9F344AF625BE14AE00A4A298 /* SearchEngineProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchEngineProtocol.swift; sourceTree = "<group>"; };
+		9F344AFB25BE14EC00A4A298 /* SearchEngineResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchEngineResult.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +109,7 @@
 				9F344A9925BD924100A4A298 /* SearchType.swift */,
 				9F344A9825BD924100A4A298 /* SearchResult.swift */,
 				9F344AB525BD95A100A4A298 /* SearchItem.swift */,
+				9F344AFB25BE14EC00A4A298 /* SearchEngineResult.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -113,6 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				9F344AAD25BD935300A4A298 /* SearchAPIProtocol.swift */,
+				9F344AF625BE14AE00A4A298 /* SearchEngineProtocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -226,9 +232,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				9F344AB625BD95A100A4A298 /* SearchItem.swift in Sources */,
+				9F344AF725BE14AE00A4A298 /* SearchEngineProtocol.swift in Sources */,
 				9F344AAE25BD935300A4A298 /* SearchAPIProtocol.swift in Sources */,
 				9F344A9C25BD924100A4A298 /* SearchCriteria.swift in Sources */,
 				9F344A9B25BD924100A4A298 /* SearchResult.swift in Sources */,
+				9F344AFC25BE14EC00A4A298 /* SearchEngineResult.swift in Sources */,
 				9F344A9A25BD924100A4A298 /* SearchType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

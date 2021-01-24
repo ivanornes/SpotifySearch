@@ -6,7 +6,15 @@
 //
 
 import Foundation
+import SpotifySearchEngine
+import SpotifySearchDomain
 
 final class SearchViewInteractor: SearchViewInteractorInputProtocol {
     weak var presenter: SearchViewInteractorOutputProtocol?
+    
+    let searchEngine: SearchEngineProtocol
+    
+    init(searchEngine: SearchEngineProtocol) {
+        self.searchEngine = searchEngine
+    }
 }

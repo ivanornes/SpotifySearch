@@ -10,15 +10,15 @@ import SpotifyAPI
 import SpotifyDomain
 import SpotifySearchDomain
 
-public final class SpotifySearchEngine {
+public final class SpotifySearchEngine: SearchEngineProtocol {
     
-    let searchAPI: SearchAPIProtocol
+    private let searchAPI: SearchAPIProtocol
     
-    init(searchAPI: SearchAPIProtocol) {
+    public init(searchAPI: SearchAPIProtocol) {
         self.searchAPI = searchAPI
     }
     
-    func search(text: String, onResult: @escaping (Result<SearchEngineResult,Error>)->Void) throws {
+    public func search(text: String, onResult: @escaping (Result<SearchEngineResult,Error>)->Void) throws {
         let group = DispatchGroup()
         var foundTracks: [Track] = []
         var foundAlbums: [Album] = []

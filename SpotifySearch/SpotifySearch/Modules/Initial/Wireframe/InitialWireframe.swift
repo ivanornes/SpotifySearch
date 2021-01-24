@@ -6,13 +6,18 @@
 //
 
 import UIKit
+import SpotifySearchDomain
 
 public final class InitialWireframe {
     
     private init() {}
     
-    public static func composeUI() -> UIViewController {
+    public static func composeUI(with searchEngine: SearchEngineProtocol) -> UIViewController {
         let vc = makeInitialViewController(title: "Initial")
+        vc.generateSearchController = {
+            let vc = SearchControllerWireframe.composeUI(searchEngine: searchEngine)
+            return UISearchController(searchResultsController: vc)
+        }
         return vc
     }
     
