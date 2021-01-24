@@ -13,30 +13,43 @@ import SpotifySearchDomain
 public final class SpotifySearchEngine: SearchEngineProtocol {
     
     private let searchAPI: SearchAPIProtocol
+    private var workItem: DispatchWorkItem?
+    private var foundTracks: [Track] = []
+    private var foundAlbums: [Album] = []
+    private var foundArtists: [Artist] = []
+    private var errors: [Error] = []
     
     public init(searchAPI: SearchAPIProtocol) {
         self.searchAPI = searchAPI
     }
     
     public func search(text: String, onResult: @escaping (Result<SearchEngineResult,Error>)->Void) throws {
+        workItem?.cancel()
+        DispatchQueue.global().async(flags: .barrier) {
+            self.foundTracks.removeAll()
+            self.foundAlbums.removeAll()
+            self.foundArtists.removeAll()
+            self.errors.removeAll()
+        }
+        
         let group = DispatchGroup()
-        var foundTracks: [Track] = []
-        var foundAlbums: [Album] = []
-        var foundArtists: [Artist] = []
-        var errors: [Error] = []
+        
         DispatchQueue.global().async {
             group.enter()
             let criteria = SearchCriteria(text: text, type: .track)
             do {
                 try self.searchAPI.search(criteria, onCompletion: { result in
                     switch result {
-                    case let .success(tracks): foundTracks.append(contentsOf: tracks as! [Track])
-                    case let .failure(error): errors.append(error)
+                    case let .success(tracks):
+                        DispatchQueue.global().async(flags: .barrier) {
+                            self.foundTracks.append(contentsOf: tracks as! [Track])
+                        }
+                    case let .failure(error): self.errors.append(error)
                     }
                 })
                 group.leave()
             } catch {
-                errors.append(error)
+                self.errors.append(error)
                 group.leave()
             }
         }
@@ -46,13 +59,16 @@ public final class SpotifySearchEngine: SearchEngineProtocol {
             do {
                 try self.searchAPI.search(criteria, onCompletion: { result in
                     switch result {
-                    case let .success(albums): foundAlbums.append(contentsOf: albums as! [Album])
-                    case let .failure(error): errors.append(error)
+                    case let .success(albums):
+                        DispatchQueue.global().async(flags: .barrier) {
+                            self.foundAlbums.append(contentsOf: albums as! [Album])
+                        }
+                    case let .failure(error): self.errors.append(error)
                     }
                 })
                 group.leave()
             } catch {
-                errors.append(error)
+                self.errors.append(error)
                 group.leave()
             }
         }
@@ -62,24 +78,31 @@ public final class SpotifySearchEngine: SearchEngineProtocol {
             do {
                 try self.searchAPI.search(criteria, onCompletion: { result in
                     switch result {
-                    case let .success(artists): foundArtists.append(contentsOf: artists as! [Artist])
-                    case let .failure(error): errors.append(error)
+                    case let .success(artists):
+                        DispatchQueue.global().async(flags: .barrier) {
+                            self.foundArtists.append(contentsOf: artists as! [Artist])
+                        }
+                    case let .failure(error): self.errors.append(error)
                     }
                 })
                 group.leave()
             } catch {
-                errors.append(error)
+                self.errors.append(error)
                 group.leave()
             }
         }
-        let workItem = DispatchWorkItem {
-            if let error = errors.first {
+        workItem = DispatchWorkItem {
+            if let error = self.errors.first {
                 onResult(.failure(error))
             } else {
-                let result = SearchEngineResult(tracks: foundTracks, albums: foundAlbums, artists: foundArtists)
-                onResult(.success(result))
+                DispatchQueue.global().sync() {
+                    let result = SearchEngineResult(tracks: self.foundTracks,
+                                                    albums: self.foundAlbums,
+                                                    artists: self.foundArtists)
+                    onResult(.success(result))
+                }
             }
         }
-        group.notify(queue: DispatchQueue.global(), work: workItem)
+        group.notify(queue: DispatchQueue.global(), work: workItem!)
     }
 }
