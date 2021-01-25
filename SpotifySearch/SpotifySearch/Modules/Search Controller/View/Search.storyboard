@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Lrr-GK-UiN">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17701"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -16,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AlbumSearchCell" id="G0S-1g-jEj" customClass="AlbumTableViewCell" customModule="SpotifySearch" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AlbumSearchCell" rowHeight="64" id="G0S-1g-jEj" customClass="AlbumTableViewCell" customModule="SpotifySearch" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="64"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="G0S-1g-jEj" id="zby-eL-1xu">
@@ -29,6 +29,12 @@
                                                 <constraint firstAttribute="width" constant="60" id="Vj3-m3-4d7"/>
                                                 <constraint firstAttribute="height" constant="60" id="flc-rd-TbS"/>
                                             </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                    <integer key="value" value="8"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UU0-g0-GJ3">
                                             <rect key="frame" x="88" y="4" width="306" height="24"/>
@@ -44,14 +50,14 @@
                                         </label>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="t61-rl-Ac9" firstAttribute="top" secondItem="zby-eL-1xu" secondAttribute="top" priority="999" constant="2" id="0rj-Fu-NX9"/>
+                                        <constraint firstAttribute="bottom" secondItem="t61-rl-Ac9" secondAttribute="bottom" priority="999" constant="2" id="4Tc-Nj-xhS"/>
                                         <constraint firstItem="UU0-g0-GJ3" firstAttribute="top" secondItem="zby-eL-1xu" secondAttribute="top" constant="4" id="99s-8H-tqd"/>
-                                        <constraint firstAttribute="bottom" secondItem="t61-rl-Ac9" secondAttribute="bottom" constant="2" id="MR1-qX-dgR"/>
                                         <constraint firstItem="t61-rl-Ac9" firstAttribute="leading" secondItem="zby-eL-1xu" secondAttribute="leading" constant="20" id="PzF-Zh-8Dc"/>
                                         <constraint firstItem="RxJ-Gm-TxI" firstAttribute="leading" secondItem="UU0-g0-GJ3" secondAttribute="leading" id="RsF-IL-nUo"/>
                                         <constraint firstAttribute="trailing" secondItem="UU0-g0-GJ3" secondAttribute="trailing" constant="20" id="Swh-Vp-8Li"/>
                                         <constraint firstItem="UU0-g0-GJ3" firstAttribute="leading" secondItem="t61-rl-Ac9" secondAttribute="trailing" constant="8" id="k2s-mW-Ytr"/>
                                         <constraint firstItem="RxJ-Gm-TxI" firstAttribute="top" secondItem="UU0-g0-GJ3" secondAttribute="bottom" id="pok-Y5-omp"/>
-                                        <constraint firstItem="t61-rl-Ac9" firstAttribute="top" secondItem="zby-eL-1xu" secondAttribute="top" constant="2" id="swN-yo-rw9"/>
                                         <constraint firstItem="t61-rl-Ac9" firstAttribute="centerY" secondItem="zby-eL-1xu" secondAttribute="centerY" id="xQI-1T-uYq"/>
                                     </constraints>
                                 </tableViewCellContentView>
@@ -60,7 +66,7 @@
                                     <outlet property="nameLabel" destination="UU0-g0-GJ3" id="MBy-Qv-06M"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ArtistSearchCell" id="0NI-Ms-c5S" customClass="ArtistTableViewCell" customModule="SpotifySearch" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ArtistSearchCell" rowHeight="64" id="0NI-Ms-c5S" customClass="ArtistTableViewCell" customModule="SpotifySearch" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="92" width="414" height="64"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0NI-Ms-c5S" id="q8G-Gs-ge6">
@@ -73,6 +79,12 @@
                                                 <constraint firstAttribute="width" constant="60" id="SaE-mo-7Ca"/>
                                                 <constraint firstAttribute="height" constant="60" id="n6v-Wb-a3l"/>
                                             </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                    <integer key="value" value="32"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ivc-V7-XPs">
                                             <rect key="frame" x="88" y="4" width="306" height="23"/>
@@ -89,13 +101,13 @@
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="bottom" secondItem="GeW-5w-XSz" secondAttribute="bottom" constant="2" id="0kR-LM-3eH"/>
                                         <constraint firstItem="ivc-V7-XPs" firstAttribute="top" secondItem="q8G-Gs-ge6" secondAttribute="top" constant="4" id="0oJ-3Y-U09"/>
+                                        <constraint firstAttribute="bottom" secondItem="GeW-5w-XSz" secondAttribute="bottom" priority="999" constant="2" id="3Id-UP-x2l"/>
                                         <constraint firstItem="s0p-Hz-e1W" firstAttribute="leading" secondItem="ivc-V7-XPs" secondAttribute="leading" id="4AM-DK-jsa"/>
+                                        <constraint firstItem="GeW-5w-XSz" firstAttribute="top" secondItem="q8G-Gs-ge6" secondAttribute="top" priority="999" constant="2" id="Icf-Zs-3rl"/>
                                         <constraint firstItem="ivc-V7-XPs" firstAttribute="leading" secondItem="GeW-5w-XSz" secondAttribute="trailing" constant="8" id="O2K-zR-fJt"/>
                                         <constraint firstItem="GeW-5w-XSz" firstAttribute="centerY" secondItem="q8G-Gs-ge6" secondAttribute="centerY" id="RTl-a6-kB1"/>
                                         <constraint firstItem="GeW-5w-XSz" firstAttribute="leading" secondItem="q8G-Gs-ge6" secondAttribute="leading" constant="20" id="dlS-ck-yHm"/>
-                                        <constraint firstItem="GeW-5w-XSz" firstAttribute="top" secondItem="q8G-Gs-ge6" secondAttribute="top" constant="2" id="dpE-8w-mR4"/>
                                         <constraint firstAttribute="trailing" secondItem="ivc-V7-XPs" secondAttribute="trailing" constant="20" id="eSy-kv-Gpb"/>
                                         <constraint firstItem="s0p-Hz-e1W" firstAttribute="top" secondItem="ivc-V7-XPs" secondAttribute="bottom" id="oyc-hn-S7i"/>
                                     </constraints>
@@ -105,13 +117,30 @@
                                     <outlet property="nameLabel" destination="ivc-V7-XPs" id="qDS-fA-XNe"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TrackSearchCell" id="xG6-I1-wad">
-                                <rect key="frame" x="0.0" y="156" width="414" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TrackSearchCell" rowHeight="64" id="xG6-I1-wad" customClass="TrackTableViewCell" customModule="SpotifySearch" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="156" width="414" height="64"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xG6-I1-wad" id="fZF-Gi-xA7">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="64"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ara-A0-FY0">
+                                            <rect key="frame" x="20" y="11" width="42.5" height="42"/>
+                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Ara-A0-FY0" firstAttribute="leading" secondItem="fZF-Gi-xA7" secondAttribute="leadingMargin" id="K2a-ZR-uHX"/>
+                                        <constraint firstItem="Ara-A0-FY0" firstAttribute="centerY" secondItem="fZF-Gi-xA7" secondAttribute="centerY" id="fQW-KV-SWV"/>
+                                        <constraint firstItem="Ara-A0-FY0" firstAttribute="top" secondItem="fZF-Gi-xA7" secondAttribute="topMargin" id="ff8-pL-NCq"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="Ara-A0-FY0" secondAttribute="bottom" id="unm-i6-Oz5"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="trackNameLabel" destination="Ara-A0-FY0" id="lfi-8F-Ana"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>

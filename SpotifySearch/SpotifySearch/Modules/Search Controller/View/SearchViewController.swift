@@ -32,6 +32,7 @@ final class SearchViewController: UITableViewController, SearchViewProtocol {
     
     private func configureTableView() {
         tableView.tableFooterView = .init()
+        tableView.estimatedRowHeight = 64.0
     }
     
     func show(_ sections: [TableCellController]...) {

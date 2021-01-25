@@ -10,7 +10,9 @@ import SpotifyDomain
 
 class TrackTableViewCell: UITableViewCell {
     
+    @IBOutlet weak var trackNameLabel: UILabel!
+    
     func configure(with track: Track) {
-        textLabel?.text = track.name
+        trackNameLabel.text = track.name
     }
 }

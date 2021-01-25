@@ -26,7 +26,7 @@ extension SearchViewPresenter: SearchViewInteractorOutputProtocol {
         let trackCellControllers = getTrackCellControllers(from: results)
         let artistCellControllers = getArtistCellControllers(from: results)
         let albumCellControllers = getAlbumCellControllers(from: results)
-        view?.show(trackCellControllers + artistCellControllers + albumCellControllers)
+        view?.show(artistCellControllers + albumCellControllers + trackCellControllers)
     }
     
     func getTrackCellControllers(from results: SearchEngineResult) -> [TableCellController] {
