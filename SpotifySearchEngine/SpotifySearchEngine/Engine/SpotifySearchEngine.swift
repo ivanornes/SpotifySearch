@@ -24,7 +24,7 @@ public final class SpotifySearchEngine: SearchEngineProtocol {
         self.searchAPI = searchAPI
     }
     
-    public func search(text: String, onResult: @escaping (Result<SearchEngineResult,Error>)->Void) throws {
+    public func search(text: String, onResult: @escaping (Result<SearchEngineResult,Error>)->Void) {
         workItem?.cancel()
         operationQueue.cancelAllOperations()
         DispatchQueue.global().async(flags: .barrier) {

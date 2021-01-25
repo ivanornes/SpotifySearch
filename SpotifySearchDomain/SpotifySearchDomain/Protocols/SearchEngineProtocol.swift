@@ -8,5 +8,5 @@
 import Foundation
 
 public protocol SearchEngineProtocol {
-    func search(text: String, onResult: @escaping (Result<SearchEngineResult,Error>)->Void) throws
+    func search(text: String, onResult: @escaping (Result<SearchEngineResult,Error>)->Void)
 }

@@ -20,14 +20,11 @@ final class SearchViewInteractor: SearchViewInteractorInputProtocol {
     
     func searchText(_ text: String) {
         guard !text.isEmpty else { return }
-        do {
-            try searchEngine.search(text: text) { result in
-                switch result {
-                case let .success(searchResult): self.presenter?.show(searchResult)
-                case .failure(_): break
-                }
+        searchEngine.search(text: text) { result in
+            switch result {
+            case let .success(searchResult): self.presenter?.show(searchResult)
+            case .failure(_): break
             }
-        } catch {
         }
     }
 }
