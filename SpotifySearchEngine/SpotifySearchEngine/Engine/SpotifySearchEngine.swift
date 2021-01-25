@@ -13,6 +13,7 @@ import SpotifySearchDomain
 public final class SpotifySearchEngine: SearchEngineProtocol {
     
     private let searchAPI: SearchAPIProtocol
+    private let operationQueue = OperationQueue()
     private var workItem: DispatchWorkItem?
     private var foundTracks: [Track] = []
     private var foundAlbums: [Album] = []
@@ -25,6 +26,7 @@ public final class SpotifySearchEngine: SearchEngineProtocol {
     
     public func search(text: String, onResult: @escaping (Result<SearchEngineResult,Error>)->Void) throws {
         workItem?.cancel()
+        operationQueue.cancelAllOperations()
         DispatchQueue.global().async(flags: .barrier) {
             self.foundTracks.removeAll()
             self.foundAlbums.removeAll()
@@ -33,75 +35,74 @@ public final class SpotifySearchEngine: SearchEngineProtocol {
         }
         
         let group = DispatchGroup()
-        
-        DispatchQueue.global().async {
+        operationQueue.addOperation {
             group.enter()
-            let criteria = SearchCriteria(text: text, type: .track)
+            group.enter()
+            group.enter()
             do {
-                try self.searchAPI.search(criteria, onCompletion: { result in
+                try self.searchAPI.search(SearchCriteria(text: text, type: .track), onCompletion: { result in
                     switch result {
                     case let .success(tracks):
                         DispatchQueue.global().async(flags: .barrier) {
                             self.foundTracks.append(contentsOf: tracks as! [Track])
                         }
-                    case let .failure(error): self.errors.append(error)
+                    case let .failure(error):
+                        DispatchQueue.global().async(flags: .barrier) {
+                            self.errors.append(error)
+                        }
                     }
+                    group.leave()
                 })
-                group.leave()
-            } catch {
-                self.errors.append(error)
-                group.leave()
-            }
-        }
-        DispatchQueue.global().async {
-            group.enter()
-            let criteria = SearchCriteria(text: text, type: .album)
-            do {
-                try self.searchAPI.search(criteria, onCompletion: { result in
+                try self.searchAPI.search(SearchCriteria(text: text, type: .album), onCompletion: { result in
                     switch result {
                     case let .success(albums):
                         DispatchQueue.global().async(flags: .barrier) {
                             self.foundAlbums.append(contentsOf: albums as! [Album])
                         }
-                    case let .failure(error): self.errors.append(error)
+                    case let .failure(error):
+                        DispatchQueue.global().async(flags: .barrier) {
+                            self.errors.append(error)
+                        }
                     }
+                    group.leave()
                 })
-                group.leave()
-            } catch {
-                self.errors.append(error)
-                group.leave()
-            }
-        }
-        DispatchQueue.global().async {
-            group.enter()
-            let criteria = SearchCriteria(text: text, type: .artist)
-            do {
-                try self.searchAPI.search(criteria, onCompletion: { result in
+                try self.searchAPI.search(SearchCriteria(text: text, type: .artist), onCompletion: { result in
                     switch result {
                     case let .success(artists):
                         DispatchQueue.global().async(flags: .barrier) {
                             self.foundArtists.append(contentsOf: artists as! [Artist])
                         }
-                    case let .failure(error): self.errors.append(error)
+                    case let .failure(error):
+                        DispatchQueue.global().async(flags: .barrier) {
+                            self.errors.append(error)
+                        }
                     }
+                    group.leave()
                 })
-                group.leave()
             } catch {
-                self.errors.append(error)
+                DispatchQueue.global().async(flags: .barrier) {
+                    self.errors.append(error)
+                }
+                group.leave()
+                group.leave()
                 group.leave()
             }
         }
+        
         workItem = DispatchWorkItem {
-            if let error = self.errors.first {
-                onResult(.failure(error))
-            } else {
-                DispatchQueue.global().sync() {
+            DispatchQueue.global().sync() {
+                if !self.foundTracks.isEmpty ||
+                    !self.foundAlbums.isEmpty ||
+                    !self.foundArtists.isEmpty {
                     let result = SearchEngineResult(tracks: self.foundTracks,
                                                     albums: self.foundAlbums,
                                                     artists: self.foundArtists)
                     onResult(.success(result))
+                } else if let error = self.errors.first {
+                    onResult(.failure(error))
                 }
             }
+            
         }
         group.notify(queue: DispatchQueue.global(), work: workItem!)
     }

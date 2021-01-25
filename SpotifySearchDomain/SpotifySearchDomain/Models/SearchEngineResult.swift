@@ -13,6 +13,8 @@ public final class SearchEngineResult {
     public let albums: [Album]
     public let artists: [Artist]
     
+    public var isEmpty: Bool { tracks.isEmpty && albums.isEmpty && artists.isEmpty }
+    
     public init(tracks: [Track], albums: [Album], artists: [Artist]) {
         self.tracks = tracks
         self.albums = albums
