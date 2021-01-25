@@ -13,7 +13,7 @@ public final class InitialWireframe {
     private init() {}
     
     public static func composeUI(with searchEngine: SearchEngineProtocol) -> UIViewController {
-        let vc = makeInitialViewController(title: "Initial")
+        let vc = makeInitialViewController(title: "Music search")
         vc.generateSearchController = {
             SearchControllerWireframe.composeUI(searchEngine: searchEngine)
         }

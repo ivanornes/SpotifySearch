@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -38,6 +38,11 @@
 		9F344B2625BE22A100A4A298 /* ArtistSearchCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F344B2525BE22A100A4A298 /* ArtistSearchCellController.swift */; };
 		9F344B2A25BE22AA00A4A298 /* TrackSearchCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F344B2925BE22AA00A4A298 /* TrackSearchCellController.swift */; };
 		9F344B2E25BE256D00A4A298 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F344B2D25BE256D00A4A298 /* Search.storyboard */; };
+		9F344B3225BEF87A00A4A298 /* ArtistTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F344B3125BEF87A00A4A298 /* ArtistTableViewCell.swift */; };
+		9F344B3625BEF88200A4A298 /* AlbumTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F344B3525BEF88200A4A298 /* AlbumTableViewCell.swift */; };
+		9F344B3A25BEF88D00A4A298 /* TrackTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F344B3925BEF88D00A4A298 /* TrackTableViewCell.swift */; };
+		9F344B3F25BEFA4500A4A298 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 9F344B3E25BEFA4500A4A298 /* Kingfisher */; };
+		9F344B5725BF657D00A4A298 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F344B5625BF657C00A4A298 /* ImageCache.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,6 +113,10 @@
 		9F344B2525BE22A100A4A298 /* ArtistSearchCellController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistSearchCellController.swift; sourceTree = "<group>"; };
 		9F344B2925BE22AA00A4A298 /* TrackSearchCellController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackSearchCellController.swift; sourceTree = "<group>"; };
 		9F344B2D25BE256D00A4A298 /* Search.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
+		9F344B3125BEF87A00A4A298 /* ArtistTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistTableViewCell.swift; sourceTree = "<group>"; };
+		9F344B3525BEF88200A4A298 /* AlbumTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumTableViewCell.swift; sourceTree = "<group>"; };
+		9F344B3925BEF88D00A4A298 /* TrackTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackTableViewCell.swift; sourceTree = "<group>"; };
+		9F344B5625BF657C00A4A298 /* ImageCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +128,7 @@
 				9F344B0B25BE156300A4A298 /* SpotifyDomain.framework in Frameworks */,
 				9F34494325BC046600A4A298 /* SpotifyAPI.framework in Frameworks */,
 				9F344B0125BE155800A4A298 /* SpotifySearchEngine.framework in Frameworks */,
+				9F344B3F25BEFA4500A4A298 /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -251,6 +261,7 @@
 		9F34497125BC3D3C00A4A298 /* Shared UI */ = {
 			isa = PBXGroup;
 			children = (
+				9F344B5625BF657C00A4A298 /* ImageCache.swift */,
 				9F34497225BC3D4400A4A298 /* UIViewController+Extension.swift */,
 				9F344AEE25BE12A000A4A298 /* TableCellController.swift */,
 			);
@@ -285,6 +296,9 @@
 				9F344B1F25BE21F300A4A298 /* AlbumSearchCellController.swift */,
 				9F344B2525BE22A100A4A298 /* ArtistSearchCellController.swift */,
 				9F344B2925BE22AA00A4A298 /* TrackSearchCellController.swift */,
+				9F344B3125BEF87A00A4A298 /* ArtistTableViewCell.swift */,
+				9F344B3525BEF88200A4A298 /* AlbumTableViewCell.swift */,
+				9F344B3925BEF88D00A4A298 /* TrackTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -347,6 +361,9 @@
 			dependencies = (
 			);
 			name = SpotifySearch;
+			packageProductDependencies = (
+				9F344B3E25BEFA4500A4A298 /* Kingfisher */,
+			);
 			productName = SpotifySearch;
 			productReference = 9F34490525BC02A800A4A298 /* SpotifySearch.app */;
 			productType = "com.apple.product-type.application";
@@ -418,6 +435,9 @@
 				Base,
 			);
 			mainGroup = 9F3448FC25BC02A800A4A298;
+			packageReferences = (
+				9F344B3D25BEFA4500A4A298 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = 9F34490625BC02A800A4A298 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -466,15 +486,19 @@
 				9F344AD725BE0FF000A4A298 /* SearchControllerWireframe.swift in Sources */,
 				9F344ADB25BE0FFC00A4A298 /* SearchViewController.swift in Sources */,
 				9F34496125BC3BE100A4A298 /* InitialViewController.swift in Sources */,
+				9F344B3225BEF87A00A4A298 /* ArtistTableViewCell.swift in Sources */,
+				9F344B3625BEF88200A4A298 /* AlbumTableViewCell.swift in Sources */,
 				9F34496E25BC3CD800A4A298 /* InitialWireframe.swift in Sources */,
 				9F344B2025BE21F300A4A298 /* AlbumSearchCellController.swift in Sources */,
 				9F344B1725BE188F00A4A298 /* Constants+Extension.swift in Sources */,
 				9F34490925BC02A800A4A298 /* AppDelegate.swift in Sources */,
 				9F344B2625BE22A100A4A298 /* ArtistSearchCellController.swift in Sources */,
 				9F344AE325BE11F000A4A298 /* SearchViewPresenter.swift in Sources */,
+				9F344B5725BF657D00A4A298 /* ImageCache.swift in Sources */,
 				9F344AEF25BE12A000A4A298 /* TableCellController.swift in Sources */,
 				9F344B1C25BE190800A4A298 /* SearchEngineBuilder.swift in Sources */,
 				9F34497325BC3D4400A4A298 /* UIViewController+Extension.swift in Sources */,
+				9F344B3A25BEF88D00A4A298 /* TrackTableViewCell.swift in Sources */,
 				9F344AEB25BE120300A4A298 /* SearchViewProtocols.swift in Sources */,
 				9F344B2A25BE22AA00A4A298 /* TrackSearchCellController.swift in Sources */,
 				9F34490B25BC02A800A4A298 /* SceneDelegate.swift in Sources */,
@@ -803,6 +827,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		9F344B3D25BEFA4500A4A298 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 6.0.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		9F344B3E25BEFA4500A4A298 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9F344B3D25BEFA4500A4A298 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 9F3448FD25BC02A800A4A298 /* Project object */;
 }
